@@ -50,22 +50,20 @@ abstract class Form extends \Phalcon\Forms\Form
         $formEl->setAttribute('method', $this->method);
         $formEl->setAttribute('valid',  $this->valid);
         $str = null;
-echo "RAR";
+
         if (false === $this->valid) {
-            echo "HERE";
             $constraintsEl = $formEl->appendChild(
                 $dom->createElementNS($this->formNs
             , 'constraints'));
 
-            echo "violation on $fieldName";
-            var_dump($this->getMessages());
             foreach ($this->getMessages() as $message) {
                 $v = $constraintsEl->appendChild(
                     $dom->createElementNS($this->formNs, 'violation', $message->getMessage())
                 );
                 $fieldName = sprintf('%s[%s]', $this->formName, $message->getField());
 
-                $v->setAttribute('constraintName', $fieldName);
+                $v->setAttribute('fieldName', $fieldName);
+                $v->setAttribute('constraintName', $message->getType());
             }
         }
 
@@ -86,6 +84,4 @@ echo "RAR";
 
         return $dom->documentElement;
     }
-
-
 }
