@@ -56,8 +56,7 @@ class XMLController extends Controller
         if (!is_file($xmlFile)) {
             $this->log->debug('XML File does not exist '.$xmlFile);
         }
-        $this->log->debug(print_r($this->request, true));
-        
+
         // file exist so include
         $this->dom->load($xmlFile, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
 
