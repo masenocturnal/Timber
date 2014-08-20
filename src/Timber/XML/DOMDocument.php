@@ -60,13 +60,13 @@ final class DOMDocument extends \DOMDocument
         $this->substituteEntities = false;
         $this->recover            = false;
     }
-    
+
 
     /**
      *
      *
      */
-    public function getXpath()
+    public function getXpathProcessor()
     {
         if ($this->xpath == null) {
             $this->createXPath();
@@ -146,7 +146,7 @@ final class DOMDocument extends \DOMDocument
         $this->namespaces = [];
 
         // will create the processor if needed
-        $xpath      = $this->getXpath();
+        $xpath      = $this->getXpathProcessor();
         $namespaces = $xpath->query('namespace::*');
 
         foreach ($namespaces as $ns) {
@@ -228,7 +228,7 @@ final class DOMDocument extends \DOMDocument
             if ($params != null) {
                 $query = $this->compileXPath($query, $params);
             }
-            
+
             if ($query != null) {
                 if ($node == null) {
                     $nodes = $this->xpath->query($query);
@@ -253,7 +253,7 @@ final class DOMDocument extends \DOMDocument
      *
      * @return DOMNodes
      */
-    public function getNodes( $query, DOMElement &$node = null)
+    public function getNodes($query, DOMElement &$node = null)
     {
         $nodes = null;
 
@@ -302,10 +302,10 @@ final class DOMDocument extends \DOMDocument
 
         return null;
     }
-    
+
     public function importXML($xpath, $string)
     {
-    
+
     }
 
     /**
@@ -408,8 +408,8 @@ final class DOMDocument extends \DOMDocument
             }
         }
     }
-    
-    
+
+
 
     /**
      * Provides the same functionality as in_array but
@@ -456,7 +456,7 @@ final class DOMDocument extends \DOMDocument
         // make sure the params don't contain in injection attacks
         // @todo migrate this to use phalcon or be self contained
         // array_walk($params,'\Timber\Utils\Validator::filterForXPathQuery');
-        
+
         // array_walk alters the internal pointer
         reset($params);
 

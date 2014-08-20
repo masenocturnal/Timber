@@ -9,7 +9,7 @@ class DOMElement extends \DOMElement
 {
     public function xpath($query)
     {
-        return $this->ownerDocument->getxpath()->query($query,$this);
+        return $this->ownerDocument->getXpathProcessor()->query($query,$this);
     }
 
     public function createElement($name, $value = null, $append = false)
@@ -18,7 +18,7 @@ class DOMElement extends \DOMElement
         $this->ownerDocument->currentNamespace = $this->namespaceURI;
 
         $el = $this->ownerDocument->createElement($name,$value);
-        
+
         // automatically append to the current node
         if ($append == true) {
             return $this->appendChild($el);
@@ -26,10 +26,10 @@ class DOMElement extends \DOMElement
 
         return $el;
     }
-    
+
     /**
      * Set element attributes all in one key value pair array
-     * 
+     *
      * @param array $attrs Key/Val of the attributes to set
      */
     public function setAttributes(array $attrs)
@@ -44,11 +44,11 @@ class DOMElement extends \DOMElement
     {
         $this->ownerDocument->currentNamespace = $this->namespaceURI;
 
-        return $this->ownerDocument->addAsElements($this, $data ,$list, $excludeList);
+        return $this->ownerDocument->addAsElements($this, $data, $list, $excludeList);
     }
 
     public function getNode($query, DOMElement &$node = null, array $params = null )
     {
-        return $this->ownerDocument->getNode($query, $this,$params);
+        return $this->ownerDocument->getNode($query, $this, $params);
     }
 }
