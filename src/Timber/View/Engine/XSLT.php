@@ -75,13 +75,14 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
             $content = null;
             // probably want a different handler for xml
             if (null != $format && $format == '.xml') {
+                $this->response->setHeader('Content-Type', 'application/xml; charset=utf-8');
                 $content = $dom->saveXML();
 
             } else {
                 // render as html
-                //ob_start();
+                ob_start();
                 $xsltProcessor->transformToURI($dom, 'php://output');
-                //$content = ob_get_clean();
+                $content = ob_get_clean();
             }
 
             $this->getView()->setContent($content);
