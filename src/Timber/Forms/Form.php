@@ -7,6 +7,7 @@ abstract class Form extends \Phalcon\Forms\Form
     public $formNs   = 'urn:Timber:Form';
     public $method   = 'post';
     public $valid    = null;
+    public $data     = null;
 
     /**
      * @override Automatically add set the form
@@ -18,6 +19,7 @@ abstract class Form extends \Phalcon\Forms\Form
         parent::add($element, $pos, $type);
     }
 
+
     /**
      * @override isValid
      *
@@ -26,16 +28,17 @@ abstract class Form extends \Phalcon\Forms\Form
      */
     public function isValid($data = null, $entity = null)
     {
-        if (null != $this->formName) {
+        if (null != $this->formName && $data != null) {
             if (isset($data[$this->formName])) {
-                $data = $data[$this->formName];
+                $this->_data = $data[$this->formName];
             }
         }
-
-        $this->valid = parent::isValid($data, $entity);
+        $this->valid = parent::isValid($this->_data, $entity);
+        
         return $this->valid;
     }
 
+    
     /**
      * Render as XML
      *
@@ -82,6 +85,6 @@ abstract class Form extends \Phalcon\Forms\Form
         $formEl->appendChild($frag);
         $dom->documentElement->setAttribute('id', $this->formName);
 
-        return $dom->documentElement;
+        return $dom->saveXML($dom->documentElement);
     }
 }
