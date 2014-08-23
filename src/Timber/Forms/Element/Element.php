@@ -10,15 +10,8 @@ abstract class Element extends \Phalcon\Forms\Element
     public $id   = null;
     public $name = null;
 
-    /**
-     *
-     */
-    public function __construct($name, array $attributes = null)
-    {
-        parent::__construct($name, $attributes);
-    }
 
-
+ 
 
     public function render($attributes=null)
     {
@@ -42,7 +35,7 @@ abstract class Element extends \Phalcon\Forms\Element
 
         $attributes = array_merge($attr, $attributes);
 
-        foreach ($attributes as $key=>$val) {
+        foreach ($attributes as $key => $val) {
             if (!empty($val)) {
                 $el .= sprintf('%s="%s" ', $key, $val);
             }
