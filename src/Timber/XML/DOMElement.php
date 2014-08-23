@@ -47,7 +47,7 @@ class DOMElement extends \DOMElement
         return $this->ownerDocument->addAsElements($this, $data, $list, $excludeList);
     }
 
-    public function getNode($query, DOMElement &$node = null, array $params = null )
+    public function get($query, array $params = null )
     {
         return $this->ownerDocument->getNode($query, $this, $params);
     }
