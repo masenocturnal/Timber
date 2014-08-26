@@ -9,14 +9,25 @@ abstract class Element extends \Phalcon\Forms\Element
     public $type = 'text';
     public $id   = null;
     public $name = null;
+    public $constraintNames = [];
 
 
- 
+    public function addValidator($validator)
+    {
+        $className = get_class($validator);
+        error_log('pos '.(-1*strrpos($className, '\\')));
+        $this->constraintNames[] = substr($className, 1+strrpos($className, '\\'));
+        parent::addValidator($validator);
+        return $this;
+    }
+
 
     public function render($attributes=null)
     {
         return parent::render($attributes);
     }
+    
+    
 
     /**
      *
@@ -28,7 +39,8 @@ abstract class Element extends \Phalcon\Forms\Element
             'id'    => sprintf('%s-%s', $this->_form->formName, $this->_name),
             'xmlns' => $this->ns,
             'value' => parent::getValue(),
-            'type'  => $this->type
+            'type'  => $this->type,
+            
         ];
 
         $el = '<input ';
@@ -48,7 +60,11 @@ abstract class Element extends \Phalcon\Forms\Element
     {
         $id = sprintf('%s-%s', $this->_form->formName, $this->_name);
         $text = parent::getLabel();
-    return sprintf('<label for="%s" xmlns="%s">%s</label>',$id, $this->ns, $text);
+        $class = null;
+        if (in_array('PresenceOf', $this->constraintNames)) {
+            $class = 'required';
+        }
+        return sprintf('<label for="%s"  class="%s" xmlns="%s">%s</label>',$id, $class, $this->ns, $text);
     }
 
 }
