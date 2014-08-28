@@ -15,7 +15,6 @@ abstract class Element extends \Phalcon\Forms\Element
     public function addValidator($validator)
     {
         $className = get_class($validator);
-        error_log('pos '.(-1*strrpos($className, '\\')));
         $this->constraintNames[] = substr($className, 1+strrpos($className, '\\'));
         parent::addValidator($validator);
         return $this;
