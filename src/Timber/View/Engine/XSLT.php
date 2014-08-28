@@ -64,6 +64,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 
             // create the xslt processor
             $xsltProcessor = new \XSLTProcessor();
+            $xsltProcessor->registerPHPFunctions();
             $xsltProcessor->importStylesheet($xslDOM);
             foreach ($xslParams as $key => $val) {
                 $xsltProcessor->setParameter('', $key, $val);
