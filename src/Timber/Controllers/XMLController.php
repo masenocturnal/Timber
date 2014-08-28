@@ -42,7 +42,7 @@ class XMLController extends Controller
         );
 
         $viewsDir = $this->config->appDir.DIRECTORY_SEPARATOR.$ns;
-        $this->log->debug('Set views dir to '.$viewsDir);
+        $this->log->debug('Setting Views Dir to '.$viewsDir);
         $this->view->setViewsDir($viewsDir);
 
         $this->dom = new \Timber\XML\DOMDocument();
@@ -60,6 +60,7 @@ class XMLController extends Controller
         // file exist so include
         $this->dom->load($xmlFile, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
 
+        // process xinclude statements in the source XML.
         $this->dom->xinclude();
 
         // we need to populate a few params so that the view xslt can use them
