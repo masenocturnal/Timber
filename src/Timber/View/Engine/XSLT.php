@@ -8,6 +8,7 @@ use Phalcon\DI\InjectionAwareInterface;
 use Phalcon\Mvc\ViewInterface;
 use Phalcon\DiInterface;
 use Phalcon\Exception;
+use \XSLTCache;
 
 class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 {
@@ -57,15 +58,25 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
             throw new Exception('Template path '.$path.' does not exist');
         }  else {
 
-            $this->log->debug('File '.$path.' exists');
-
-            $xslDOM = new \DOMDocument();
-            $xslDOM->load($path, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
-
+            $xsltProcessor = null;
+            if (extension_loaded('xslcache')) {
+                $xsltProcessor = new XSLTCache();
+                $xsltProcessor->registerPHPFunctions();
+                $xsltProcessor->importStylesheet($path, true);
+                
+            } else {
+            
+                $xslDOM = new \DOMDocument();
+                $xslDOM->load($path, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
+            
+                $xsltProcessor = new \XSLTProcessor();
+                $xsltProcessor->registerPHPFunctions();
+                $xsltProcessor->importStylesheet($xslDOM);
+            }
             // create the xslt processor
-            $xsltProcessor = new \XSLTProcessor();
-            $xsltProcessor->registerPHPFunctions();
-            $xsltProcessor->importStylesheet($xslDOM);
+            
+            
+            
             foreach ($xslParams as $key => $val) {
                 $xsltProcessor->setParameter('', $key, $val);
             }
