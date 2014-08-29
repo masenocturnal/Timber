@@ -3,7 +3,12 @@
     "version": "2.0.1",
     "license": "GPL-3.0+",
     "dist": {
-        "url": "ssh://ns2/srv/git/timber2.git",
+        "url": "file:///home/am/projects/Timber2/.git",
         "type": "vcs"
+    },
+    "autoload": {
+        "psr-4": {
+            "Timber\\": "src/Timber/"
+        }
     }
 }
