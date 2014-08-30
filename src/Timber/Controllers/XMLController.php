@@ -4,6 +4,7 @@ namespace Timber\Controllers;
 use \Phalcon\Mvc\Controller,
     \Phalcon\Mvc\View;
 use \Timber\Streams\XMLStreamLoader;
+use \Timber\URL\ReverseURLMapper;
 
 /**
  * Base Timber controller. Automatically creates a DOMDocument
@@ -16,9 +17,15 @@ use \Timber\Streams\XMLStreamLoader;
  */
 class XMLController extends Controller
 {
-    protected $dom       = null;
-    protected $xslParams = null;
-
+    /** Reference to the DOM Document **/
+    protected $dom              = null;
+    
+    /** Params passed to xslt processor **/
+    protected $xslParams        = null;
+    
+    /** Reference to the reverseURLMapper **/
+    protected $reverseURLMapper = null;
+    
     /**
      * Automatically sets the views dir to the module
      * views directory
@@ -65,8 +72,11 @@ class XMLController extends Controller
 
         // we need to populate a few params so that the view xslt can use them
         $this->setDefaultXSLParams();
+        
+        // instanciate the class so it's accessible to the XSTView
+        $this->reverseURLMapper = new ReverseURLMapper($this->url);
     }
-
+    
     /**
      * Sets default param which get passed through to every
      * XSLT processor
