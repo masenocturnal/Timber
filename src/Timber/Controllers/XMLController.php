@@ -98,7 +98,7 @@ class XMLController extends Controller
         // default closures for stream types
         $map = [
             'module' => function($path) use ($baseDir) {
-                return $basedir.'/'.$path;
+                return $baseDir.'/'.$path;
             },
             'lib'    => function($path) {
                 // @todo make this work
