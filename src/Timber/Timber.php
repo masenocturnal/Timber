@@ -8,11 +8,9 @@ use \Phalcon\Config;
 class Timber extends \Phalcon\MVC\Application
 {
     public $configDir    = null;
-    public $classLoader  = null;
-    public $configPrefix = null;
-    public $configFile   = null;
-    public $config       = null;
-    public $loader       = null;
+
+    
+    
     
     /**
      *
@@ -43,17 +41,14 @@ class Timber extends \Phalcon\MVC\Application
      */
     protected function registerClassmap()
     {
-        $classMapFile = $this->_dir['config']->classMap;
+    
+        $classMapFile = $this->_dependencyInjector['config']->classMap;
         
         if (is_file($classMapFile)) {
-            $this->loader->registerNamespaces($classMapFile, true);
+            $this->loader->registerNamespaces(include($classMapFile), true);
         }
     }
     
-    public function setClassLoader($loader)
-    {
-        $this->loader = $loader;
-    }
     
     /**
      *
