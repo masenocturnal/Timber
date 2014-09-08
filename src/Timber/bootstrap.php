@@ -7,7 +7,7 @@ $debug->listen();
 $loader  = new \Phalcon\Loader();
 
 // do we need this?
-$loader->registerDirs(['../app']);
+// $loader->registerDirs(['../app']);
 
 // set_include_path ('/home/am/projects/Timber2/src');
 // can this be shifted?
