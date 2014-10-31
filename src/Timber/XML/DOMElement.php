@@ -9,7 +9,7 @@ class DOMElement extends \DOMElement
 {
     public function xpath($query)
     {
-        return $this->ownerDocument->getXpathProcessor()->query($query,$this);
+        return $this->ownerDocument->getXpathProcessor()->query($query, $this);
     }
 
     public function createElement($name, $value = null, $append = false)
