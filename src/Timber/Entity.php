@@ -7,6 +7,8 @@ class Entity implements \JsonSerializable
     public $content;
     public $ns = 'urn:Timber:Entity:Foo';
     
+    use \Timber\Utils\Array2XMLTrait;
+    
     public function __construct($content = null)
     {
         $this->content = $content;
@@ -33,8 +35,9 @@ class Entity implements \JsonSerializable
         if (is_string($this->content)) {
             $dom->appendChild($dom->createElementNS($this->ns,'string', $this->content));
         } elseif(is_array($this->content)) {
-            // @todo array to XML
+            $this->Array2XML($dom, $this->content);
         }
+        
         return $dom->saveXML($dom->documentElement);
     }
     
