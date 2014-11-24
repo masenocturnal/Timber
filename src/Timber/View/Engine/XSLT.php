@@ -46,7 +46,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
             // @todo do we import nodes ?
             if (method_exists($val,'__toXML')) {
                 $dom->appendXML($dom->documentElement, $val->__toXML());
-            }
+            } 
         }
 
         if ($dom == null) {
@@ -73,10 +73,8 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
                 $xsltProcessor->registerPHPFunctions();
                 $xsltProcessor->importStylesheet($xslDOM);
             }
-            // create the xslt processor
-            
-            
-            
+
+
             foreach ($xslParams as $key => $val) {
                 $xsltProcessor->setParameter('', $key, $val);
             }
