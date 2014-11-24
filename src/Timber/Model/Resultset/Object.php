@@ -68,9 +68,8 @@ class Object extends Simple implements EntityInterface
        
         $el  = $doc->appendChild($doc->createElementNS('urn:'.str_replace('\\', ':', $ns), $className.'s'));
         
-        foreach ($this as $foo) {
-            $el->appendXML($foo->__toXML());
-            
+        foreach ($this as $row) {
+            $el->appendXML($row->__toXML());
         }
         
         return $doc->saveXML($doc->documentElement);
@@ -85,5 +84,4 @@ class Object extends Simple implements EntityInterface
     {
         return $this->ns;
     }
-
 }
