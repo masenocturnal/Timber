@@ -51,4 +51,9 @@ class DOMElement extends \DOMElement
     {
         return $this->ownerDocument->getNode($query, $this, $params);
     }
+    
+    public function appendXML($str)
+    {
+        return $this->ownerDocument->appendXML($this, $str, false);
+    }
 }
