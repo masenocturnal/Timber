@@ -1,16 +1,16 @@
 <?php
 namespace Timber\Utils;
 
-use Timber\XML\DOMElement;
-
 trait Array2XMLTrait {
-    public function array2XML(DOMElement $node, array $arr) {
+    public function array2XML(\DOMNode $node, array $arr) {
+        $dom = $node->ownerDocument;
+        
         foreach ($arr as $k=>$v) {
             if (is_array($v)) {
-                $newNode = $node->appendChild($node->createElement($k));
+                $newNode = $node->appendChild($dom->createElementNS($this->ns, $k));
                 $this->array2XML($newNode, $v);
             } else {
-                $node->appendChild($node->createElement($k, $v));
+                $node->appendChild($dom->createElementNS($this->ns, $k, $v));
             }
         }
     }
