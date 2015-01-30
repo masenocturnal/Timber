@@ -350,7 +350,7 @@ final class DOMDocument extends \DOMDocument
      * @param  boolean    $excludeList If set to true the provided list operates as an exclude list
      * @return DOMElement Returns the parent element that was passed to the method
      */
-    public function addAsElements( DOMElement $parentEl , array $data , $list = null, $excludeList = false)
+    public function addAsElements(DOMElement $parentEl , array $data , $list = null, $excludeList = false)
     {
         if ($list == null) {
             // add the elements in the array
