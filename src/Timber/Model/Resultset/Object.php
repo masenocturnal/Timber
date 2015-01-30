@@ -1,9 +1,11 @@
 <?php
 namespace Timber\Model\Resultset;
 
-use \Timber\Entity;
-use \Phalcon\Mvc\Model\Resultset\Simple;
-use \Timber\EntityInterface;
+use Timber\Entity;
+use Phalcon\Mvc\Model\Resultset\Simple;
+use Timber\EntityInterface;
+use Timber\Utils\NSTools;
+
 /**
  * Extension of the Phalcon result set that accepts an optional argument 
  *
@@ -11,6 +13,7 @@ use \Timber\EntityInterface;
 class Object extends Simple implements EntityInterface
 {
     public $entityName = null;
+    
     public $baseClass  = '\Timber\Entity';
     public $ns         = 'urn:Timber:ResultSet';
     
@@ -18,30 +21,32 @@ class Object extends Simple implements EntityInterface
     use \Timber\Utils\Object2XMLTrait;
     use \Timber\Utils\Array2XMLTrait;
     
-    public function __construct(array $columnMap = null, \Phalcon\Mvc\ModelInterface $model, \Phalcon\Db\Result\Pdo $result, $cache = null, $keepSnapshots = null, $entityName = null)
+    public function __construct(array $columnMap = null, \Phalcon\Mvc\ModelInterface $model, \Phalcon\Db\Result\Pdo $result, $cache = null, $keepSnapshots = null, $entityClass = null)
     {
         // set the entity name so we can create
         // the XML representation of it in the correct namespace
-        $this->entityName = $entityName;
+        $this->entityName = $entityClass;
         
         parent::__construct($columnMap, $model, $result, $cache, $keepSnapshots);
     }
 
     public function current()
     {
-        $pos = strripos($this->entityName, '\\', -1);
-        $ns  = substr($this->entityName, strpos('\\', $this->entityName), $pos);
-        $className = substr($this->entityName, $pos+1);
-       
+        
+        $ns  = NSTools::extractNS($this->entityName);
+        $className = NSTools::extractClassname($this->entityName);
+        
         if ($this->entityName != null) {
         
+            
             // only create the class if it hasn't been defined yet
-            if (!class_exists($this->entityName)) {
-             
+            // try and autoload it if it doesn't
+            if (!class_exists($this->entityName, true)) {
+                
                 $str = "
                     namespace $ns;
                     
-                    class $className extends \Timber\Entity implements \Timber\EntityInterface 
+                    class ".ucfirst($className)." extends \Timber\Entity implements \Timber\EntityInterface 
                     {
                     
                     }
@@ -50,8 +55,7 @@ class Object extends Simple implements EntityInterface
             }
             
             $entity = new $this->entityName(parent::current());
-            $entity->ns = 'urn:'.str_replace('\\', ':', $ns);
-                
+            
             return $entity;
         }
         return new Entity(parent::current(), $this->entityName);
@@ -61,12 +65,10 @@ class Object extends Simple implements EntityInterface
     {
         $doc = new \Timber\XML\DOMDocument();
         
-        // @todo move this to a central location
-        $pos = strripos($this->entityName, '\\', -1);
-        $ns  = substr($this->entityName, strpos('\\', $this->entityName), $pos);
-        $className = substr($this->entityName, $pos+1);
+        $ns        = NSTools::extractNS($this->entityName);
+        $className = NSTools::extractClassname($this->entityName);
        
-        $el  = $doc->appendChild($doc->createElementNS('urn:'.str_replace('\\', ':', $ns), $className.'s'));
+        $el = $doc->appendChild($doc->createElementNS('urn:'.$ns, ucfirst($className).'s'));
         
         foreach ($this as $row) {
             $el->appendXML($row->__toXML());
