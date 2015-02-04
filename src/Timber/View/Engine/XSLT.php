@@ -13,21 +13,6 @@ use \XSLTCache;
 class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 {
 
-    public function __construct($view, $dependencyInjector = null)
-    {
-        parent::__construct($view, $dependencyInjector);
-    }
-
-    public function getContent ()
-    {
-        return $this->content;
-    }
-
-    public function partial($partialPath)
-    {
-        parent::__partial($partialPath);
-    }
-
 
     public function render($path, $params, $mustClean = null)
     {
@@ -68,12 +53,10 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
             
                 $xslDOM = new \DOMDocument();
                 $xslDOM->load($path, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
-            
                 $xsltProcessor = new \XSLTProcessor();
                 $xsltProcessor->registerPHPFunctions();
                 $xsltProcessor->importStylesheet($xslDOM);
             }
-
 
             foreach ($xslParams as $key => $val) {
                 $xsltProcessor->setParameter('', $key, $val);
