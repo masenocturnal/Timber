@@ -15,6 +15,7 @@ use Timber\Config\ConfigReader;
 use Phalcon\Logger\AdapterInterface as Logger;
 use Timber\Streams\XMLStreamLoader;
 use Timber\XML\DOMElement;
+use Timber\EntityInterface;
 
 /**
  * This is an extension of the DOMDocument provided by libxml (via the php extensions).
@@ -57,8 +58,10 @@ final class DOMDocument extends \DOMDocument
         parent::registerNodeClass('DOMElement', '\Timber\XML\DOMElement');
 
         $this->preserveWhiteSpace = false;
+        $this->validateOnParse    = false;
         $this->substituteEntities = false;
         $this->recover            = false;
+        
     }
 
 
@@ -467,5 +470,15 @@ final class DOMDocument extends \DOMDocument
 
         // interpolate replacement values into the message and return
         return strtr($query, $replace);
+    }
+    
+    public function addEntity(EntityInterface $entity, $id = null)
+    {
+        $el = $this->getElementById($id);
+
+        if ($el === null) {
+            throw new \InvalidArgumentException('ID '.$id. ' could not be found');
+        }
+        return $this->appendXML($el, $entity->__toXML());
     }
 }
