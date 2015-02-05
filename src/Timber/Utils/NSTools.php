@@ -6,7 +6,7 @@ class NSTools
     /**
      * Extract a Namespace from the class
      */
-    public static function extractNS($className)
+    public static function extractNS($className, $separator = ':')
     {
         // by default don't go any more than 2 layers deep
         // if you want to go further you need to make an actual class
@@ -21,7 +21,7 @@ class NSTools
         if (isset($nsArr[2])) {
             unset($nsArr[2]);
         }
-        return implode(':', $nsArr);
+        return implode($separator, $nsArr);
     }
     
     /**
@@ -32,7 +32,7 @@ class NSTools
     {
         $pos = strripos($className, '\\', -1);
         $className = substr($className, $pos+1);
-        return ucfirst($className);
+        return $className;
     }
     
 }
