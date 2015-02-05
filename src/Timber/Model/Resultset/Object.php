@@ -33,7 +33,7 @@ class Object extends Simple implements EntityInterface
     public function current()
     {
         
-        $ns  = NSTools::extractNS($this->entityName);
+        $ns  = NSTools::extractNS($this->entityName, '\\');
         $className = NSTools::extractClassname($this->entityName);
         
         if ($this->entityName != null) {
@@ -42,11 +42,11 @@ class Object extends Simple implements EntityInterface
             // only create the class if it hasn't been defined yet
             // try and autoload it if it doesn't
             if (!class_exists($this->entityName, true)) {
-                
+               
                 $str = "
                     namespace $ns;
                     
-                    class ".ucfirst($className)." extends \Timber\Entity implements \Timber\EntityInterface 
+                    class ".$className." extends \Timber\Entity implements \Timber\EntityInterface 
                     {
                     
                     }
@@ -68,7 +68,7 @@ class Object extends Simple implements EntityInterface
         $ns        = NSTools::extractNS($this->entityName);
         $className = NSTools::extractClassname($this->entityName);
        
-        $el = $doc->appendChild($doc->createElementNS('urn:'.$ns, ucfirst($className).'s'));
+        $el = $doc->appendChild($doc->createElementNS('urn:'.$ns, $className.'s'));
         
         foreach ($this as $row) {
             $el->appendXML($row->__toXML());
