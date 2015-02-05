@@ -18,7 +18,7 @@ class Entity implements \JsonSerializable, EntityInterface
     {
         $this->content = $content;
         $className  = get_class($this);
-        $this->name = ucfirst(NSTools::extractClassname($className));
+        $this->name = NSTools::extractClassname($className);
         $this->ns   = 'urn:'.NSTools::extractNS($className);
     }
     
