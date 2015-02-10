@@ -68,7 +68,7 @@ class Object extends Simple implements EntityInterface
         $ns        = NSTools::extractNS($this->entityName);
         $className = NSTools::extractClassname($this->entityName);
        
-        $el = $doc->appendChild($doc->createElementNS('urn:'.$ns, $className.'s'));
+        $el = $doc->appendChild($doc->createElementNS('urn:'.$ns, $className.'Collection'));
         
         foreach ($this as $row) {
             $el->appendXML($row->__toXML());
