@@ -88,7 +88,7 @@ abstract class AbstractStreamLoader
         $this->pos  = 0;
         $urlParts = \parse_url( $path );
 
-        if ( 3 == sizeof($urlParts) ) {
+        if (3 == sizeof($urlParts)) {
             $this->path = $this->getPath($urlParts['host'], $urlParts['path']);
             
             if ($this->path != null && \stream_resolve_include_path($this->path) !== false) {
@@ -113,9 +113,14 @@ abstract class AbstractStreamLoader
 
         $ret;
         if (static::$map != null) {
+            // use the default when we haven't been provided anything
             if (!isset(static::$map[$host])) {
+                self::$logger->warning(
+                    sprintf('No mapping provided for %s using the default', $host)
+                );
                 $host = 'default';
             }
+            
             if (is_string(static::$map[$host])) {
                 $ret = static::$map[$host].'/'.$path;
             } elseif (is_callable(static::$map[$host])) {
@@ -123,7 +128,7 @@ abstract class AbstractStreamLoader
                 $ret = $x($path);
             }
         }
-        self::$logger->debug("RETURNING $ret for path $path");
+        self::$logger->debug("Stream  resolved $path to $ret ");
 
         return $ret;
     }
