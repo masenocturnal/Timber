@@ -1,10 +1,11 @@
 <?php
 namespace Timber\Controllers;
 
-use \Phalcon\Mvc\Controller,
-    \Phalcon\Mvc\View;
-use \Timber\Streams\XMLStreamLoader;
-use \Timber\URL\ReverseURLMapper;
+use Phalcon\Mvc\Controller,
+    Phalcon\Mvc\View,
+    Timber\Streams\XMLStreamLoader,
+    Timber\URL\ReverseURLMapper,
+    Timber\Exceptions\FileNotFoundException;
 
 /**
  * Base Timber controller. Automatically creates a DOMDocument
@@ -60,8 +61,10 @@ class XMLController extends Controller
 
         $this->log->debug('XML File: '.$xmlFile);
 
+
         if (!is_file($xmlFile)) {
-            $this->log->debug('XML File does not exist '.$xmlFile);
+            $msg = sprintf('XML File does not exist %s', $xmlFile);
+            throw new FileNotFoundException($msg);
         }
 
         // file exist so include
@@ -71,7 +74,7 @@ class XMLController extends Controller
         $this->dom->xinclude();
 
         // we need to populate a few params so that the view xslt can use them
-        $this->setDefaultXSLParams();
+        $this->setDefaultXSLParams(); 
         
         // instanciate the class so it's accessible to the XSTView
         $this->reverseURLMapper = new ReverseURLMapper($this->url);
@@ -95,15 +98,17 @@ class XMLController extends Controller
     {
         $baseDir = $this->config['appDir'];
 
+        // @todo get this from the DI
         // default closures for stream types
         $map = [
-            'module' => function($path) use ($baseDir) {
+            'modules' => function($path) use ($baseDir) {
                 return $baseDir.'/'.$path;
             },
             'lib'    => function($path) {
                 // @todo make this work
                 return \stream_resolve_include_path(ltrim($path,'/'));
             },
+            'app'     => rtrim($this->config->appDir, '/'),
             'default' => getcwd()
         ];
         $streamLoader = new XMLStreamLoader();
