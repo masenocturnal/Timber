@@ -16,7 +16,6 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 
     public function render($path, $params, $mustClean = null)
     {
-
         $dom = $params['dom'];
         unset($params['dom']);
 
@@ -40,6 +39,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 
         // make sure the template exists
         if (!file_exists($path)) {
+            
             throw new Exception('Template path '.$path.' does not exist');
         }  else {
 
@@ -53,6 +53,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
             
                 $xslDOM = new \DOMDocument();
                 $xslDOM->load($path, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
+                
                 $xsltProcessor = new \XSLTProcessor();
                 $xsltProcessor->registerPHPFunctions();
                 $xsltProcessor->importStylesheet($xslDOM);
@@ -69,6 +70,8 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
             // probably want a different handler for xml
             if (null != $format && $format == '.xml') {
                 $this->response->setHeader('Content-Type', 'application/xml; charset=utf-8');
+                $dom->formatOutput=true;
+                $dom->preserveWhitespace=true;
                 $content = $dom->saveXML();
 
             } else {
