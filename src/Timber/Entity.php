@@ -42,6 +42,7 @@ class Entity implements \JsonSerializable, EntityInterface
         if (is_string($this->content)) {
             return $this->content;
         }
+        return var_export($this->content);
     }
 
     /**
