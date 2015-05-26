@@ -85,7 +85,7 @@ final class DOMDocument extends \DOMDocument
     public function getDefaultNamespace()
     {
         if ($this->defaultNamespace == null) {
-            if ( $this->isDefaultNamespace( $this->documentElement->namespaceURI) ) {
+            if ( $this->isDefaultNamespace($this->documentElement->namespaceURI) ) {
                 $this->defaultNamespace = $this->documentElement->namespaceURI;
             }
         }
@@ -323,7 +323,7 @@ final class DOMDocument extends \DOMDocument
      */
     public function appendXHTML(DOMElement &$el, $string )
     {
-        $string = htmlspecialchars($string, ENT_QUOTES|ENT_XML1);
+        //$string = htmlspecialchars($string, ENT_QUOTES|ENT_XML1);
 
         // I can't seem to find a nice way to specify that a fragment is from a particular
         // namespace
@@ -333,7 +333,7 @@ final class DOMDocument extends \DOMDocument
 
         // the element hasn't been attached to the document yet so we can just replace it
         foreach ($frag->childNodes as $childNode) {
-            $node = $this->importNode( $childNode, true );
+            $node = $this->importNode($childNode, true);
             $el->appendChild( $node );
         }
 

@@ -32,13 +32,11 @@ class Object extends Simple implements EntityInterface
 
     public function current()
     {
-        
         $ns  = NSTools::extractNS($this->entityName, '\\');
         $className = NSTools::extractClassname($this->entityName);
         
         if ($this->entityName != null) {
         
-            
             // only create the class if it hasn't been defined yet
             // try and autoload it if it doesn't
             if (!class_exists($this->entityName, true)) {
@@ -58,6 +56,8 @@ class Object extends Simple implements EntityInterface
             
             return $entity;
         }
+        
+        return parent::current();
         return new Entity(parent::current(), $this->entityName);
     }
     
