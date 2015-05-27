@@ -9,6 +9,7 @@ class Entity implements \JsonSerializable, EntityInterface
     public $content;
     public $ns         = 'urn:Timber:Entity';
     public $name       = 'Entity';
+    public $clarkNS    = null;
     protected $_format = [];
     
     use \Timber\Utils\Array2XMLTrait;
@@ -20,6 +21,7 @@ class Entity implements \JsonSerializable, EntityInterface
         $className  = get_class($this);
         $this->name = NSTools::extractClassname($className);
         $this->ns   = 'urn:'.NSTools::extractNS($className);
+        $this->clarkNS = '{'.$this->ns.'}';
     }
     
     
@@ -51,18 +53,26 @@ class Entity implements \JsonSerializable, EntityInterface
      */
     public function __toXML()
     {
-        $dom = new DOMDocument();
-        $el = $dom->appendChild($dom->createElementNS($this->ns,$this->name));
+        $writer = new \Sabre\Xml\Writer();
+        $writer->openMemory();
+//         $writer->namespaceMap = [
+//             $this->ns => 'mod',
+//         ];
+//         
+        
+        $writer->startElement($this->clarkNS.$this->name);
         
         if (is_string($this->content)) {
-            $dom->appendChild($dom->createElementNS($this->ns,'string', $this->content));
-        } elseif(is_array($this->content)) {
-            $this->Array2XML($el, $this->content);
-        } else if (is_object($this->content)) {
-            $this->object2XML($el, $this->content);
+            $writer->startElement($this->clarkNS.'string');
+            $writer->text($this->content);
+            
+        } else if(is_array($this->content)) {
+            $this->array2XML($writer, $this->content);
         }
+        
+        $writer->endElement();
+        return $writer->outputMemory();
 
-        return $dom->saveXML($dom->documentElement);
     }
     
     /**

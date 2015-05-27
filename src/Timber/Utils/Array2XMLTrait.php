@@ -2,18 +2,32 @@
 namespace Timber\Utils;
 
 trait Array2XMLTrait {
-    public function array2XML(\DOMNode $node, array $arr) {
-        $dom = $node->ownerDocument;
+    public function array2XML($writer, $arr) {
+        
         foreach ($arr as $k => $v) {
-            $name = $k.'Format';
-            if (method_exists($this, $name)) {
-                $this->$name($node, $k, $v);
-            } elseif (is_array($v)) {
-                $newNode = $node->appendChild($dom->createElementNS($this->ns, $k));
-                $this->array2XML($newNode, $v);
+            if(is_numeric($k)) {
+                if(is_array($v)) {
+                    $writer->startElement('{'.$this->ns.'}'.$k);
+                    $writer->text($v);
+                    $writer->endElement();
+                }  else {
+                    throw new UnexpectedValueException('Unable to serialize XML');
+                }
             } else {
-                $node->appendChild($dom->createElementNS($this->ns, $k, $v));
-            }
+                // look for a function named {key}Format
+                $name = $k.'Format';
+                if (method_exists($this, $name)) {
+                    $this->$name($writer, $k, $v);
+                } elseif (is_array($v)) {
+                    $writer->startElement('{'.$this->ns.'}rar');
+                    $writer->writeRaw($this->array2XML($writer, $v));
+                    $writer->endElement();
+                } else {
+                    $writer->startElement('{'.$this->ns.'}'.$k);
+                    $writer->text($v);
+                    $writer->endElement();
+                }
+            } 
         }
     }
 }
