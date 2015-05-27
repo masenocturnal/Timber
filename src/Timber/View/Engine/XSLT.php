@@ -36,7 +36,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
         if ($dom == null) {
             throw new Exception('DOM is empty in: '.__CLASS__);
         }
-
+        
         // make sure the template exists
         if (!file_exists($path)) {
             
@@ -45,9 +45,16 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 
             $xsltProcessor = null;
             if (extension_loaded('xslcache')) {
+                
+                $cache = false;
+                if (isset($this->getDI()['config']->xslt) && 
+                    isset($this->getDI()['config']->xslt->cache)) {
+                    $cache = $this->getDI()['config']->xslt->cache;
+                }
+                
                 $xsltProcessor = new XSLTCache();
                 $xsltProcessor->registerPHPFunctions();
-                $xsltProcessor->importStylesheet($path, true);
+                $xsltProcessor->importStylesheet($path, $cache);
                 
             } else {
             
