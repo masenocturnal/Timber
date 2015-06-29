@@ -5,7 +5,8 @@ use Phalcon\Mvc\Controller,
     Phalcon\Mvc\View,
     Timber\Streams\XMLStreamLoader,
     Timber\URL\ReverseURLMapper,
-    Timber\Exceptions\FileNotFoundException;
+    Timber\Exceptions\FileNotFoundException,
+    Timber\XML\DOMDocument;
 
 /**
  * Base Timber controller. Automatically creates a DOMDocument
@@ -26,6 +27,8 @@ class XMLController extends Controller
     
     /** Reference to the reverseURLMapper **/
     protected $reverseURLMapper = null;
+
+    protected $defaultModule    = 'Modules\Site';
     
     /**
      * Automatically sets the views dir to the module
@@ -36,7 +39,7 @@ class XMLController extends Controller
     public function beforeExecuteRoute($dispatcher)
     {
         $className = $dispatcher->getControllerName();
-        $ns        = substr($className,0,strripos($className, '\\', -1)+1);
+        $ns        = substr($className, 0, strripos($className, '\\', -1)+1);
         $ns        = str_replace(
             [
                 'Controllers', // rename Controllers to Views
@@ -53,19 +56,45 @@ class XMLController extends Controller
         $this->log->debug('Setting Views Dir to '.$viewsDir);
         $this->view->setViewsDir($viewsDir);
 
-        $this->dom = new \Timber\XML\DOMDocument();
+        $appDir = $this->config->appDir;
+        $ds     = DIRECTORY_SEPARATOR;
+
+        $loadOrder = [
+            $appDir.$ds.str_replace('Views', 'XML', $ns).$dispatcher->getActionName().'.xml',
+            $appDir.$ds.str_replace('\\', '/', $this->defaultModule).$ds.'XML'.$ds.'index.xml'
+        ];
+
+
+        $this->loadXML($loadOrder);
+
+        // we need to populate a few params so that the view xslt can use them
+        $this->setDefaultXSLParams(); 
+
+        // instanciate the class so it's accessible to the XSTView
+        $this->reverseURLMapper = new ReverseURLMapper($this->url);
+    }
+
+    private function loadXML($loadOrder)
+    {
+        $this->dom = new DOMDocument();
         $this->registerDefaultStreamWrapper();
 
-        $xmlFile = str_replace('Views', 'XML', $ns);
-        $xmlFile = $this->config->appDir.DIRECTORY_SEPARATOR.$xmlFile.$dispatcher->getActionName().'.xml';
+        $xmlFile = null;
+
+        foreach ($loadOrder as $file)
+        {
+            $this->log->debug(sprintf('Attempting to load %s', $file));
+            if (is_file($file)) {
+                $xmlFile = $file;
+                break;
+            }
+        }
+
+        if ($xmlFile == null) {
+            throw new FileNotFoundException('XML File does not exist');
+        }
 
         $this->log->debug('XML File: '.$xmlFile);
-
-
-        if (!is_file($xmlFile)) {
-            $msg = sprintf('XML File does not exist %s', $xmlFile);
-            throw new FileNotFoundException($msg);
-        }
 
         // file exist so include
         $this->dom->load($xmlFile, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
@@ -73,13 +102,8 @@ class XMLController extends Controller
         // process xinclude statements in the source XML.
         $this->dom->xinclude();
 
-        // we need to populate a few params so that the view xslt can use them
-        $this->setDefaultXSLParams(); 
-        
-        // instanciate the class so it's accessible to the XSTView
-        $this->reverseURLMapper = new ReverseURLMapper($this->url);
     }
-    
+
     /**
      * Sets default param which get passed through to every
      * XSLT processor
@@ -92,7 +116,6 @@ class XMLController extends Controller
         ];
 
     }
-
 
     protected function registerDefaultStreamWrapper()
     {
