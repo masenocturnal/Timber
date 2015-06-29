@@ -7,10 +7,7 @@ use \Phalcon\Config;
 
 class Timber extends \Phalcon\MVC\Application
 {
-    public $configDir    = null;
-
-    
-    
+    public $configDir     = null;
     
     /**
      *
@@ -19,7 +16,7 @@ class Timber extends \Phalcon\MVC\Application
      * @param Object $classLoader      Object responsible for loading classes
      * @param string $configPrefix     Prefix of the file to use to override config
      *                                 options
-     * @return int standard unix return codes                 
+     * @return int standard unix return codes
      */
     public function __construct(\Phalcon\Di $di = null)
     {
@@ -34,21 +31,18 @@ class Timber extends \Phalcon\MVC\Application
         parent::__construct($di);
     }
     
-    
     /**
      * Register an additional classmap if specified in the config
      *
      */
     protected function registerClassmap()
     {
-    
         $classMapFile = $this->_dependencyInjector['config']->classMap;
         
         if (is_file($classMapFile)) {
             $this->loader->registerNamespaces(include($classMapFile), true);
         }
     }
-    
     
     /**
      *
@@ -58,19 +52,22 @@ class Timber extends \Phalcon\MVC\Application
      {
         // we want to catch any errors here
         try {
-            
-            $this->registerClassMap();        
+            $this->registerClassMap();
 
             $response = parent::handle();
-            
+
             // @todo should we use our own response ?
             if ($response instanceof \Phalcon\Http\Response) {
                 return $response->send();
             }
-            
             echo $response;
         } catch (\Exception $e) {
-            error_log($e->getMessage());
+            
+            $logger = $this->_dependencyInjector['log'];
+                $logger->error(sprintf('Error (%s): %s %s:%s', $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine()));
+            error_log("Exception".$e->getMessage());
         }
      }
+     
+     
 }
