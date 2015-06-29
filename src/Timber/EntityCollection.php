@@ -12,7 +12,7 @@ class EntityCollection extends Entity
      */
     public function __toXML()
     {
-        
+
         // remove the Collection part of FooCollection
         $entityName = substr($this->name, 0, -10); 
         $writer = new \Sabre\Xml\Writer();
@@ -36,6 +36,7 @@ class EntityCollection extends Entity
             $writer->write($val);
             $writer->endElement();
         }
+
         $writer->endElement();
         return $writer->outputMemory();
     }

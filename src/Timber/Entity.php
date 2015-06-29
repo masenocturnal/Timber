@@ -67,6 +67,7 @@ class Entity implements \JsonSerializable, EntityInterface
             $writer->text($this->content);
             
         } else if(is_array($this->content)) {
+
             $this->array2XML($writer, $this->content);
         }
         

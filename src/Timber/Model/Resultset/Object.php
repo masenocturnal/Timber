@@ -5,6 +5,8 @@ use Timber\Entity;
 use Phalcon\Mvc\Model\Resultset\Simple;
 use Timber\EntityInterface;
 use Timber\Utils\NSTools;
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Db\Result;
 
 /**
  * Extension of the Phalcon result set that accepts an optional argument 
@@ -21,7 +23,7 @@ class Object extends Simple implements EntityInterface
     use \Timber\Utils\Object2XMLTrait;
     use \Timber\Utils\Array2XMLTrait;
     
-    public function __construct(array $columnMap = null, \Phalcon\Mvc\ModelInterface $model, \Phalcon\Db\Result\Pdo $result, $cache = null, $keepSnapshots = null, $entityClass = null)
+    public function __construct(array $columnMap = null, ModelInterface $model, Pdo $result, $cache = null, $keepSnapshots = null, $entityClass = null)
     {
         // set the entity name so we can create
         // the XML representation of it in the correct namespace
@@ -39,6 +41,7 @@ class Object extends Simple implements EntityInterface
         
             // only create the class if it hasn't been defined yet
             // try and autoload it if it doesn't
+            // @todo cache these
             if (!class_exists($this->entityName, true)) {
                
                 $str = "
@@ -57,7 +60,7 @@ class Object extends Simple implements EntityInterface
             return $entity;
         }
         
-        return parent::current();
+        //return parent::current();
         return new Entity(parent::current(), $this->entityName);
     }
     
