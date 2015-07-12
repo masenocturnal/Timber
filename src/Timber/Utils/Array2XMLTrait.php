@@ -19,8 +19,12 @@ trait Array2XMLTrait {
                 if (method_exists($this, $name)) {
                     $this->$name($writer, $k, $v);
                 } elseif (is_array($v)) {
-                    $writer->startElement('{'.$this->ns.'}rar');
+                    $writer->startElement('{'.$this->ns.'}');
                     $writer->writeRaw($this->array2XML($writer, $v));
+                    $writer->endElement();
+                } elseif (is_object($v)) {
+                    $writer->startElement('{'.$this->ns.'}');
+                    $writer->writeRaw($this->object2XML($writer, $v));
                     $writer->endElement();
                 } else {
                     $writer->startElement('{'.$this->ns.'}'.$k);
