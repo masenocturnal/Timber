@@ -44,9 +44,14 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
      */
     public function __toString()
     {
+        if ($this->content != null) {
+            return '';
+        }
+
         if (is_string($this->content)) {
             return $this->content;
         }
+
         return var_export($this->content);
     }
 
@@ -58,22 +63,17 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
     {
         $writer = new \Sabre\Xml\Writer();
         $writer->openMemory();
-//         $writer->namespaceMap = [
-//             $this->ns => 'mod',
-//         ];
-//         
-        var_dump($this->clarkNS);
-        var_dump($this->name);
 
-        $writer->startElement($this->clarkNS.$this->name);
+        $writer->startElement($this->name);
+        $this->writeNS($writer, $this->ns);
         
         if (is_string($this->content)) {
-            $writer->startElement($this->clarkNS.'string');
             $writer->text($this->content);
-            $writer->endElement();
 
         } else if(is_array($this->content)) {
             $this->array2XML($writer, $this->content);
+        } elseif (is_object($this->content)) {
+            $this->object2XML($writer, $this->content);
         }
         
         $writer->endElement();
@@ -85,7 +85,13 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
     {
         if ($this->content != null)
         {
-            $this->content[$offset] = $value;
+            if (is_array($this->content)) {
+                $this->content[$offset] = $value;
+            } else if(is_object($this->content)) {
+                $this->content->$offset = $value;
+            } else {
+                throw new \ErrorException('Unable to set attribute. $this->content is not an object:  '.$offset);
+            }
         }
         return false;
     }
@@ -94,7 +100,13 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
     {
         if ($this->content != null)
         {
-            return $this->content[$offset];
+            if (is_array($this->content) && isset($this->content[$offset]))
+            {
+                return $this->content[$offset];
+            } else if (is_object($this->content) && isset($this->content->$offset)) {
+                return $this->content->$offset;
+            }
+
         }
         return false;
     }

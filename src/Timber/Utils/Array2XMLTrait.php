@@ -2,16 +2,34 @@
 namespace Timber\Utils;
 
 trait Array2XMLTrait {
-    public function array2XML($writer, $arr) {
-        
+
+    protected function writeNS($writer, $ns=null)
+    {
+        if ($ns != null){
+            $writer->startAttribute('xmlns');
+            $writer->text($ns);
+            $writer->endAttribute();
+        }
+    }
+
+    public function array2XML($writer, $arr, $ns = null) {
+
         foreach ($arr as $k => $v) {
+
             if(is_numeric($k)) {
                 if(is_array($v)) {
-                    $writer->startElement('{'.$this->ns.'}'.$k);
+                    $writer->startElement($k);
+                    $this->writeNS($writer, $ns);
                     $writer->text($v);
                     $writer->endElement();
                 }  else {
-                    throw new UnexpectedValueException('Unable to serialize XML');
+                    $writer->startElement('item');
+                    $this->writeNS($writer, $ns);
+                    $writer->startAttribute('position');
+                    $writer->text($k);
+                    $writer->endAttribute();
+                    $writer->text($v);
+                    $writer->endElement();
                 }
             } else {
                 // look for a function named {key}Format
@@ -19,19 +37,19 @@ trait Array2XMLTrait {
                 if (method_exists($this, $name)) {
                     $this->$name($writer, $k, $v);
                 } elseif (is_array($v)) {
-                    $writer->startElement('{'.$this->ns.'}');
+                    $writer->startElement($k);
+                    $this->writeNS($writer, $ns);
                     $writer->writeRaw($this->array2XML($writer, $v));
                     $writer->endElement();
                 } elseif (is_object($v)) {
-                    $writer->startElement('{'.$this->ns.'}');
-                    $writer->writeRaw($this->object2XML($writer, $v));
-                    $writer->endElement();
+                    $this->object2XML($writer, $v, $ns);
                 } else {
-                    $writer->startElement('{'.$this->ns.'}'.$k);
+                    $writer->startElement($k);
+                    $this->writeNS($writer, $ns);
                     $writer->text($v);
                     $writer->endElement();
                 }
-            } 
+            }
         }
     }
 }

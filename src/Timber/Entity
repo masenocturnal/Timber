@@ -1,0 +1,2363 @@
+<?php
+$coverage = new PHP_CodeCoverage;
+$coverage->setData(array (
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/Utils/NSTools.php' => 
+  array (
+    16 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    19 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    21 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    22 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    23 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    24 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    25 => NULL,
+    33 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    34 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    35 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    36 => NULL,
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/XML/DOMElement.php' => 
+  array (
+    12 => 
+    array (
+    ),
+    13 => NULL,
+    18 => 
+    array (
+    ),
+    20 => 
+    array (
+    ),
+    23 => 
+    array (
+    ),
+    24 => 
+    array (
+    ),
+    25 => NULL,
+    27 => 
+    array (
+    ),
+    28 => NULL,
+    37 => 
+    array (
+    ),
+    38 => 
+    array (
+    ),
+    39 => 
+    array (
+    ),
+    40 => 
+    array (
+    ),
+    41 => NULL,
+    45 => 
+    array (
+    ),
+    47 => 
+    array (
+    ),
+    48 => NULL,
+    52 => 
+    array (
+    ),
+    53 => NULL,
+    57 => 
+    array (
+    ),
+    58 => NULL,
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sabre/xml/lib/Writer.php' => 
+  array (
+    101 => 
+    array (
+    ),
+    102 => 
+    array (
+    ),
+    103 => 
+    array (
+    ),
+    104 => 
+    array (
+    ),
+    105 => 
+    array (
+    ),
+    107 => 
+    array (
+    ),
+    109 => 
+    array (
+    ),
+    110 => 
+    array (
+    ),
+    112 => 
+    array (
+    ),
+    115 => 
+    array (
+    ),
+    116 => 
+    array (
+    ),
+    117 => NULL,
+    119 => 
+    array (
+    ),
+    120 => 
+    array (
+    ),
+    121 => 
+    array (
+    ),
+    123 => 
+    array (
+    ),
+    126 => 
+    array (
+    ),
+    127 => 
+    array (
+    ),
+    129 => 
+    array (
+    ),
+    133 => 
+    array (
+    ),
+    136 => 
+    array (
+    ),
+    137 => 
+    array (
+    ),
+    138 => 
+    array (
+    ),
+    139 => 
+    array (
+    ),
+    141 => 
+    array (
+    ),
+    143 => 
+    array (
+    ),
+    145 => 
+    array (
+    ),
+    147 => NULL,
+    149 => 
+    array (
+    ),
+    159 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    162 => 
+    array (
+    ),
+    164 => 
+    array (
+    ),
+    165 => 
+    array (
+    ),
+    166 => 
+    array (
+    ),
+    170 => 
+    array (
+    ),
+    171 => 
+    array (
+    ),
+    172 => 
+    array (
+    ),
+    173 => 
+    array (
+    ),
+    174 => 
+    array (
+    ),
+    175 => 
+    array (
+    ),
+    176 => 
+    array (
+    ),
+    177 => 
+    array (
+    ),
+    181 => 
+    array (
+    ),
+    182 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    185 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    187 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    188 => 
+    array (
+    ),
+    189 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    190 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    192 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    194 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    196 => NULL,
+    209 => 
+    array (
+    ),
+    210 => 
+    array (
+    ),
+    211 => 
+    array (
+    ),
+    212 => 
+    array (
+    ),
+    213 => 
+    array (
+    ),
+    215 => 
+    array (
+    ),
+    231 => 
+    array (
+    ),
+    232 => 
+    array (
+    ),
+    233 => 
+    array (
+    ),
+    235 => 
+    array (
+    ),
+    250 => 
+    array (
+    ),
+    255 => 
+    array (
+    ),
+    257 => 
+    array (
+    ),
+    259 => 
+    array (
+    ),
+    260 => 
+    array (
+    ),
+    262 => 
+    array (
+    ),
+    263 => 
+    array (
+    ),
+    266 => 
+    array (
+    ),
+    267 => 
+    array (
+    ),
+    268 => 
+    array (
+    ),
+    269 => 
+    array (
+    ),
+    270 => 
+    array (
+    ),
+    271 => 
+    array (
+    ),
+    272 => 
+    array (
+    ),
+    274 => 
+    array (
+    ),
+    278 => 
+    array (
+    ),
+    279 => 
+    array (
+    ),
+    282 => 
+    array (
+    ),
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/Utils/Array2XMLTrait.php' => 
+  array (
+    8 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    9 => 
+    array (
+    ),
+    10 => 
+    array (
+    ),
+    11 => 
+    array (
+    ),
+    12 => 
+    array (
+    ),
+    13 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    17 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    19 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    20 => 
+    array (
+    ),
+    21 => 
+    array (
+    ),
+    22 => 
+    array (
+    ),
+    23 => 
+    array (
+    ),
+    24 => 
+    array (
+    ),
+    25 => 
+    array (
+    ),
+    26 => 
+    array (
+    ),
+    28 => 
+    array (
+    ),
+    30 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    31 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    32 => 
+    array (
+    ),
+    33 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    34 => 
+    array (
+    ),
+    35 => 
+    array (
+    ),
+    36 => 
+    array (
+    ),
+    37 => 
+    array (
+    ),
+    38 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    39 => 
+    array (
+    ),
+    40 => 
+    array (
+    ),
+    41 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    42 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    43 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    44 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    47 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    48 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sabre/xml/lib/ContextStackTrait.php' => 
+  array (
+    78 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+    81 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    84 => 
+    array (
+    ),
+    94 => 
+    array (
+    ),
+    95 => 
+    array (
+    ),
+    96 => 
+    array (
+    ),
+    97 => 
+    array (
+    ),
+    99 => 
+    array (
+    ),
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/Tests/Entities/BarEntity.php' => 
+  array (
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sabre/uri/lib/functions.php' => 
+  array (
+    17 => 
+    array (
+    ),
+    18 => 
+    array (
+    ),
+    22 => 
+    array (
+    ),
+    23 => 
+    array (
+    ),
+    24 => 
+    array (
+    ),
+    25 => 
+    array (
+    ),
+    26 => NULL,
+    27 => 
+    array (
+    ),
+    29 => 
+    array (
+    ),
+    33 => 
+    array (
+    ),
+    34 => 
+    array (
+    ),
+    35 => NULL,
+    37 => 
+    array (
+    ),
+    39 => 
+    array (
+    ),
+    40 => 
+    array (
+    ),
+    41 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    46 => 
+    array (
+    ),
+    47 => 
+    array (
+    ),
+    48 => 
+    array (
+    ),
+    50 => 
+    array (
+    ),
+    51 => 
+    array (
+    ),
+    52 => 
+    array (
+    ),
+    53 => 
+    array (
+    ),
+    54 => 
+    array (
+    ),
+    56 => 
+    array (
+    ),
+    57 => 
+    array (
+    ),
+    60 => 
+    array (
+    ),
+    61 => 
+    array (
+    ),
+    62 => 
+    array (
+    ),
+    66 => 
+    array (
+    ),
+    67 => 
+    array (
+    ),
+    68 => 
+    array (
+    ),
+    69 => 
+    array (
+    ),
+    70 => 
+    array (
+    ),
+    71 => 
+    array (
+    ),
+    72 => 
+    array (
+    ),
+    73 => 
+    array (
+    ),
+    74 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    77 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+    81 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    83 => 
+    array (
+    ),
+    85 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
+    87 => 
+    array (
+    ),
+    88 => 
+    array (
+    ),
+    89 => 
+    array (
+    ),
+    90 => 
+    array (
+    ),
+    92 => NULL,
+    108 => 
+    array (
+    ),
+    110 => 
+    array (
+    ),
+    111 => 
+    array (
+    ),
+    112 => 
+    array (
+    ),
+    113 => 
+    array (
+    ),
+    115 => 
+    array (
+    ),
+    117 => 
+    array (
+    ),
+    118 => 
+    array (
+    ),
+    120 => 
+    array (
+    ),
+    121 => 
+    array (
+    ),
+    122 => 
+    array (
+    ),
+    124 => 
+    array (
+    ),
+    125 => 
+    array (
+    ),
+    126 => 
+    array (
+    ),
+    127 => 
+    array (
+    ),
+    128 => 
+    array (
+    ),
+    129 => 
+    array (
+    ),
+    131 => 
+    array (
+    ),
+    132 => 
+    array (
+    ),
+    134 => 
+    array (
+    ),
+    135 => 
+    array (
+    ),
+    136 => 
+    array (
+    ),
+    138 => 
+    array (
+    ),
+    140 => 
+    array (
+    ),
+    141 => 
+    array (
+    ),
+    143 => 
+    array (
+    ),
+    144 => 
+    array (
+    ),
+    145 => 
+    array (
+    ),
+    146 => 
+    array (
+    ),
+    148 => 
+    array (
+    ),
+    149 => 
+    array (
+    ),
+    150 => 
+    array (
+    ),
+    151 => 
+    array (
+    ),
+    152 => 
+    array (
+    ),
+    154 => 
+    array (
+    ),
+    156 => 
+    array (
+    ),
+    158 => NULL,
+    173 => 
+    array (
+    ),
+    174 => 
+    array (
+    ),
+    175 => 
+    array (
+    ),
+    176 => 
+    array (
+    ),
+    177 => 
+    array (
+    ),
+    178 => 
+    array (
+    ),
+    179 => 
+    array (
+    ),
+    180 => 
+    array (
+    ),
+    181 => 
+    array (
+    ),
+    183 => NULL,
+    194 => 
+    array (
+    ),
+    196 => 
+    array (
+    ),
+    197 => 
+    array (
+    ),
+    198 => 
+    array (
+    ),
+    199 => 
+    array (
+    ),
+    200 => 
+    array (
+    ),
+    201 => 
+    array (
+    ),
+    202 => 
+    array (
+    ),
+    203 => 
+    array (
+    ),
+    204 => 
+    array (
+    ),
+    205 => 
+    array (
+    ),
+    207 => 
+    array (
+    ),
+    209 => 
+    array (
+    ),
+    211 => 
+    array (
+    ),
+    212 => 
+    array (
+    ),
+    214 => 
+    array (
+    ),
+    216 => 
+    array (
+    ),
+    218 => 
+    array (
+    ),
+    219 => 
+    array (
+    ),
+    220 => 
+    array (
+    ),
+    221 => 
+    array (
+    ),
+    222 => 
+    array (
+    ),
+    223 => 
+    array (
+    ),
+    224 => 
+    array (
+    ),
+    225 => 
+    array (
+    ),
+    226 => 
+    array (
+    ),
+    228 => 
+    array (
+    ),
+    230 => NULL,
+    252 => 
+    array (
+    ),
+    253 => 
+    array (
+    ),
+    254 => 
+    array (
+    ),
+    255 => NULL,
+    256 => 
+    array (
+    ),
+    258 => NULL,
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/Utils/Object2XMLTrait.php' => 
+  array (
+    10 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    11 => 
+    array (
+    ),
+    12 => 
+    array (
+    ),
+    13 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    14 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    15 => 
+    array (
+    ),
+    16 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    17 => 
+    array (
+    ),
+    18 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    19 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    20 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    21 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    22 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    23 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    24 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    25 => 
+    array (
+    ),
+    26 => 
+    array (
+    ),
+    27 => 
+    array (
+    ),
+    29 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    31 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/EntityInterface.php' => 
+  array (
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/XML/DOMDocument.php' => 
+  array (
+    50 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    51 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    52 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    53 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    54 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    55 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    57 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    58 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    60 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    61 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    62 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    63 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    65 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+    ),
+    74 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    76 => 
+    array (
+    ),
+    78 => 
+    array (
+    ),
+    79 => NULL,
+    87 => 
+    array (
+    ),
+    88 => 
+    array (
+    ),
+    89 => 
+    array (
+    ),
+    90 => 
+    array (
+    ),
+    91 => 
+    array (
+    ),
+    93 => 
+    array (
+    ),
+    94 => NULL,
+    98 => 
+    array (
+    ),
+    99 => 
+    array (
+    ),
+    100 => 
+    array (
+    ),
+    102 => 
+    array (
+    ),
+    103 => NULL,
+    116 => 
+    array (
+    ),
+    117 => 
+    array (
+    ),
+    118 => 
+    array (
+    ),
+    119 => 
+    array (
+    ),
+    120 => 
+    array (
+    ),
+    121 => 
+    array (
+    ),
+    123 => 
+    array (
+    ),
+    124 => NULL,
+    133 => 
+    array (
+    ),
+    134 => 
+    array (
+    ),
+    135 => 
+    array (
+    ),
+    136 => 
+    array (
+    ),
+    137 => 
+    array (
+    ),
+    138 => 
+    array (
+    ),
+    139 => 
+    array (
+    ),
+    140 => 
+    array (
+    ),
+    149 => 
+    array (
+    ),
+    152 => 
+    array (
+    ),
+    153 => 
+    array (
+    ),
+    155 => 
+    array (
+    ),
+    156 => 
+    array (
+    ),
+    157 => 
+    array (
+    ),
+    158 => 
+    array (
+    ),
+    159 => 
+    array (
+    ),
+    160 => 
+    array (
+    ),
+    161 => 
+    array (
+    ),
+    162 => 
+    array (
+    ),
+    163 => 
+    array (
+    ),
+    176 => 
+    array (
+    ),
+    177 => 
+    array (
+    ),
+    179 => 
+    array (
+    ),
+    180 => 
+    array (
+    ),
+    181 => 
+    array (
+    ),
+    184 => 
+    array (
+    ),
+    185 => 
+    array (
+    ),
+    186 => 
+    array (
+    ),
+    187 => 
+    array (
+    ),
+    189 => 
+    array (
+    ),
+    190 => 
+    array (
+    ),
+    193 => 
+    array (
+    ),
+    194 => NULL,
+    207 => 
+    array (
+    ),
+    208 => 
+    array (
+    ),
+    209 => 
+    array (
+    ),
+    212 => 
+    array (
+    ),
+    224 => 
+    array (
+    ),
+    226 => 
+    array (
+    ),
+    227 => 
+    array (
+    ),
+    228 => 
+    array (
+    ),
+    230 => 
+    array (
+    ),
+    231 => 
+    array (
+    ),
+    232 => 
+    array (
+    ),
+    233 => 
+    array (
+    ),
+    235 => 
+    array (
+    ),
+    236 => 
+    array (
+    ),
+    237 => 
+    array (
+    ),
+    238 => 
+    array (
+    ),
+    239 => 
+    array (
+    ),
+    242 => 
+    array (
+    ),
+    243 => 
+    array (
+    ),
+    244 => NULL,
+    245 => 
+    array (
+    ),
+    246 => 
+    array (
+    ),
+    248 => 
+    array (
+    ),
+    249 => NULL,
+    261 => 
+    array (
+    ),
+    263 => 
+    array (
+    ),
+    264 => 
+    array (
+    ),
+    265 => 
+    array (
+    ),
+    267 => 
+    array (
+    ),
+    269 => 
+    array (
+    ),
+    270 => 
+    array (
+    ),
+    271 => 
+    array (
+    ),
+    272 => 
+    array (
+    ),
+    275 => 
+    array (
+    ),
+    276 => NULL,
+    277 => 
+    array (
+    ),
+    280 => 
+    array (
+    ),
+    281 => NULL,
+    293 => 
+    array (
+    ),
+    295 => 
+    array (
+    ),
+    296 => 
+    array (
+    ),
+    297 => 
+    array (
+    ),
+    298 => 
+    array (
+    ),
+    299 => 
+    array (
+    ),
+    300 => 
+    array (
+    ),
+    303 => 
+    array (
+    ),
+    304 => NULL,
+    306 => 
+    array (
+    ),
+    307 => NULL,
+    312 => 
+    array (
+    ),
+    330 => 
+    array (
+    ),
+    331 => 
+    array (
+    ),
+    332 => 
+    array (
+    ),
+    335 => 
+    array (
+    ),
+    336 => 
+    array (
+    ),
+    337 => 
+    array (
+    ),
+    338 => 
+    array (
+    ),
+    340 => 
+    array (
+    ),
+    342 => 
+    array (
+    ),
+    343 => NULL,
+    358 => 
+    array (
+    ),
+    360 => 
+    array (
+    ),
+    361 => 
+    array (
+    ),
+    362 => 
+    array (
+    ),
+    363 => 
+    array (
+    ),
+    364 => 
+    array (
+    ),
+    365 => 
+    array (
+    ),
+    366 => 
+    array (
+    ),
+    369 => 
+    array (
+    ),
+    370 => NULL,
+    384 => 
+    array (
+    ),
+    386 => 
+    array (
+    ),
+    387 => 
+    array (
+    ),
+    388 => 
+    array (
+    ),
+    389 => 
+    array (
+    ),
+    390 => 
+    array (
+    ),
+    391 => 
+    array (
+    ),
+    406 => 
+    array (
+    ),
+    408 => 
+    array (
+    ),
+    409 => 
+    array (
+    ),
+    410 => 
+    array (
+    ),
+    411 => 
+    array (
+    ),
+    412 => 
+    array (
+    ),
+    413 => 
+    array (
+    ),
+    428 => 
+    array (
+    ),
+    429 => 
+    array (
+    ),
+    430 => 
+    array (
+    ),
+    431 => NULL,
+    432 => 
+    array (
+    ),
+    434 => 
+    array (
+    ),
+    435 => NULL,
+    447 => 
+    array (
+    ),
+    448 => 
+    array (
+    ),
+    449 => 
+    array (
+    ),
+    450 => 
+    array (
+    ),
+    464 => 
+    array (
+    ),
+    466 => 
+    array (
+    ),
+    467 => 
+    array (
+    ),
+    468 => 
+    array (
+    ),
+    469 => 
+    array (
+    ),
+    472 => 
+    array (
+    ),
+    473 => NULL,
+    477 => 
+    array (
+    ),
+    479 => 
+    array (
+    ),
+    480 => 
+    array (
+    ),
+    481 => NULL,
+    482 => 
+    array (
+    ),
+    483 => NULL,
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/Entity.php' => 
+  array (
+    23 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    24 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    25 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    26 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    27 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    28 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    32 => 
+    array (
+    ),
+    33 => 
+    array (
+    ),
+    34 => NULL,
+    38 => 
+    array (
+    ),
+    39 => NULL,
+    43 => 
+    array (
+    ),
+    44 => NULL,
+    52 => 
+    array (
+    ),
+    53 => 
+    array (
+    ),
+    54 => NULL,
+    55 => 
+    array (
+    ),
+    56 => NULL,
+    64 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    65 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    67 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    68 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    69 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    70 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    72 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    73 => 
+    array (
+    ),
+    74 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    77 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    78 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+    ),
+    79 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    80 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    81 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    83 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    84 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testKVArray',
+      1 => 'Timber\\Tests\\Entities\\EntityTest::testObject',
+      2 => 'Timber\\Tests\\Entities\\EntityTest::testNested',
+      3 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    85 => NULL,
+    89 => 
+    array (
+    ),
+    90 => 
+    array (
+    ),
+    91 => 
+    array (
+    ),
+    92 => 
+    array (
+    ),
+    93 => 
+    array (
+    ),
+    94 => NULL,
+    98 => 
+    array (
+    ),
+    99 => 
+    array (
+    ),
+    100 => 
+    array (
+    ),
+    101 => NULL,
+    102 => 
+    array (
+    ),
+    103 => NULL,
+    107 => 
+    array (
+    ),
+    108 => NULL,
+    112 => 
+    array (
+    ),
+    113 => 
+    array (
+    ),
+    114 => 
+    array (
+    ),
+    115 => NULL,
+    116 => 
+    array (
+    ),
+    117 => NULL,
+    121 => 
+    array (
+    ),
+    122 => 
+    array (
+    ),
+    123 => 
+    array (
+    ),
+    124 => 
+    array (
+    ),
+    125 => 
+    array (
+    ),
+    126 => NULL,
+    130 => 
+    array (
+    ),
+    131 => 
+    array (
+    ),
+    132 => 
+    array (
+    ),
+    133 => 
+    array (
+    ),
+    134 => 
+    array (
+    ),
+    141 => 
+    array (
+    ),
+    142 => NULL,
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/EntityCollection.php' => 
+  array (
+    21 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    22 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    23 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    24 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    25 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    26 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    27 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    31 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    32 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    33 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    35 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    36 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    37 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    38 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    39 => 
+    array (
+    ),
+    40 => 
+    array (
+    ),
+    41 => 
+    array (
+    ),
+    42 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    43 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    44 => 
+    array (
+      0 => 'Timber\\Tests\\Entities\\EntityTest::testEntityCollection',
+    ),
+    45 => NULL,
+    49 => 
+    array (
+    ),
+    50 => NULL,
+    54 => 
+    array (
+    ),
+    55 => NULL,
+  ),
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/Tests/Entities/BarCollection.php' => 
+  array (
+  ),
+));
+$coverage->setTests(array (
+  'Timber\\Tests\\Entities\\EntityTest::testKVArray' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Timber\\Tests\\Entities\\EntityTest::testObject' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Timber\\Tests\\Entities\\EntityTest::testNested' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'Timber\\Tests\\Entities\\EntityTest::testEntityCollection' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+));
+
+$filter = $coverage->filter();
+$filter->setBlacklistedFiles(array (
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-file-iterator/src/Facade.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-file-iterator/src/Factory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-file-iterator/src/Iterator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Driver.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Driver/HHVM.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Driver/Xdebug.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Exception/UnintentionallyCoveredCode.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Filter.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Clover.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Crap4j.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Factory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Dashboard.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Directory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/File.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Node.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Node/Directory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Node/File.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Node/Iterator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/PHP.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/Text.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Directory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File/Coverage.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File/Method.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File/Report.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/File/Unit.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Node.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Project.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Tests.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Totals.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Util.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-code-coverage/src/CodeCoverage/Util/InvalidArgumentHelper.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-timer/src/Timer.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-token-stream/src/Token.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-token-stream/src/Token/Stream.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Extensions/GroupTestSuite.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Extensions/PhptTestCase.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Extensions/PhptTestSuite.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Extensions/RepeatedTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Extensions/TestDecorator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Extensions/TicketListener.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Assert.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Assert/Functions.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/AssertionFailedError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/BaseTestListener.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/CodeCoverageException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/And.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/ArrayHasKey.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/ArraySubset.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/Attribute.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/ClassHasAttribute.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/ClassHasStaticAttribute.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/Composite.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/Count.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/ExceptionCode.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/ExceptionMessage.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/ExceptionMessageRegExp.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/FileExists.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/GreaterThan.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsEmpty.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsEqual.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsFalse.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsInstanceOf.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsJson.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsNull.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsTrue.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/IsType.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches/ErrorMessageProvider.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/LessThan.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/Not.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/ObjectHasAttribute.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/Or.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/PCREMatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/SameSize.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/StringContains.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/StringEndsWith.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/StringMatches.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/StringStartsWith.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/TraversableContains.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/TraversableContainsOnly.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Constraint/Xor.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Error.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Error/Deprecated.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Error/Notice.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Error/Warning.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/ExceptionWrapper.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/ExpectationFailedException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/IncompleteTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/IncompleteTestCase.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/IncompleteTestError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/InvalidCoversTargetError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/InvalidCoversTargetException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/OutputError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/RiskyTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/RiskyTestError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/SelfDescribing.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/SkippedTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/SkippedTestCase.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/SkippedTestError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/SkippedTestSuiteError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/SyntheticError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Test.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/TestCase.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/TestFailure.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/TestListener.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/TestResult.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/TestSuite.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/TestSuite/DataProvider.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/UnintentionallyCoveredCodeError.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Framework/Warning.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/BaseTestRunner.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/Filter/Factory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/Filter/Group.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/Filter/Group/Exclude.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/Filter/Group/Include.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/Filter/Test.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/StandardTestSuiteLoader.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/TestSuiteLoader.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Runner/Version.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/TextUI/Command.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/TextUI/ResultPrinter.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/TextUI/TestRunner.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Blacklist.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Configuration.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/ErrorHandler.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Fileloader.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Filesystem.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Filter.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Getopt.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/GlobalState.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/InvalidArgumentHelper.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Log/JSON.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Log/JUnit.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Log/TAP.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/PHP.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/PHP/Default.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/PHP/Windows.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Printer.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Regex.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/String.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Test.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/TestDox/NamePrettifier.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/TestDox/ResultPrinter.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/TestDox/ResultPrinter/HTML.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/TestDox/ResultPrinter/Text.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/TestSuiteIterator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/Type.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit/src/Util/XML.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/Identity.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/InvocationMocker.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/Match.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/MethodNameMatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/Namespace.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/ParametersMatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Builder/Stub.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Exception/BadMethodCallException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Exception/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Exception/RuntimeException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Generator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Invocation.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Invocation/Object.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Invocation/Static.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/InvocationMocker.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Invokable.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/AnyInvokedCount.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/AnyParameters.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/ConsecutiveParameters.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/Invocation.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/InvokedAtIndex.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/InvokedAtLeastCount.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/InvokedAtLeastOnce.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/InvokedAtMostCount.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/InvokedCount.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/InvokedRecorder.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/MethodName.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/Parameters.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Matcher/StatelessInvocation.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/MockBuilder.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/MockObject.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/ConsecutiveCalls.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/MatcherCollection.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/Return.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/ReturnArgument.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/ReturnCallback.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/ReturnSelf.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Stub/ReturnValueMap.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Verifiable.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpunit/php-text-template/src/Template.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Dumper.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Escaper.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Exception/DumpException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Exception/ExceptionInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Exception/ParseException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Exception/RuntimeException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Inline.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Parser.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Tests/DumperTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Tests/InlineTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Tests/ParseExceptionTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Tests/ParserTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Tests/YamlTest.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Unescaper.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/symfony/yaml/Yaml.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/diff/src/Chunk.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/diff/src/Diff.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/diff/src/Differ.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/diff/src/LCS/LongestCommonSubsequence.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/diff/src/LCS/MemoryEfficientLongestCommonSubsequenceImplementation.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/diff/src/LCS/TimeEfficientLongestCommonSubsequenceImplementation.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/diff/src/Line.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/diff/src/Parser.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/environment/src/Console.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/environment/src/Runtime.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/ArrayComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/Comparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/ComparisonFailure.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/DOMNodeComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/DateTimeComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/DoubleComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/ExceptionComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/Factory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/MockObjectComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/NumericComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/ObjectComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/ResourceComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/ScalarComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/SplObjectStorageComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/comparator/src/TypeComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/exporter/src/Exporter.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/global-state/src/Blacklist.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/global-state/src/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/global-state/src/Restorer.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/global-state/src/RuntimeException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/global-state/src/Snapshot.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/recursion-context/src/Context.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/recursion-context/src/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/recursion-context/src/InvalidArgumentException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/sebastian/version/src/Version.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/composer/ClassLoader.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/composer/autoload_classmap.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/composer/autoload_files.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/composer/autoload_namespaces.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/composer/autoload_psr4.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/composer/autoload_real.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Context.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Description.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Location.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Serializer.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/AuthorTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/CoversTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/DeprecatedTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/ExampleTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/LinkTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/MethodTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/ParamTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/PropertyReadTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/PropertyTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/PropertyWriteTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/ReturnTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/SeeTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/SinceTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/SourceTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/ThrowsTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/UsesTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/VarTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/VersionTag.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Type/Collection.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValuesToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayCountToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayEntryToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayEveryEntryToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/CallbackToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ExactValueToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/IdenticalValueToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/LogicalAndToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/LogicalNotToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ObjectStateToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/StringContainsToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/TokenInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Argument/Token/TypeToken.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Call/Call.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Call/CallCenter.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Comparator/ClosureComparator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Comparator/Factory.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/CachedDoubler.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ClassPatchInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/DisableConstructorPatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/HhvmExceptionPatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/KeywordPatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/MagicCallPatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ProphecySubjectPatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ReflectionClassNewInstancePatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/SplFileInfoPatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/TraversablePatch.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/DoubleInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/Doubler.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCodeGenerator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCreator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassMirror.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ArgumentNode.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ClassNode.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/MethodNode.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ReflectionInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/LazyDouble.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Doubler/NameGenerator.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Call/UnexpectedCallException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassCreatorException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassMirrorException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassNotFoundException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/DoubleException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/DoublerException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/InterfaceNotFoundException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/MethodNotFoundException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ReturnByReferenceException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Exception.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/InvalidArgumentException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/AggregateException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/FailedPredictionException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/NoCallsException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/PredictionException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/UnexpectedCallsCountException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/UnexpectedCallsException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/MethodProphecyException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/ObjectProphecyException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/ProphecyException.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallPrediction.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallTimesPrediction.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prediction/CallbackPrediction.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prediction/NoCallsPrediction.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prediction/PredictionInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Promise/CallbackPromise.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Promise/PromiseInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Promise/ReturnArgumentPromise.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Promise/ReturnPromise.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Promise/ThrowPromise.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prophecy/MethodProphecy.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ObjectProphecy.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ProphecyInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prophecy/ProphecySubjectInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prophecy/Revealer.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prophecy/RevealerInterface.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Prophet.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/vendor/phpspec/prophecy/src/Prophecy/Util/StringUtil.php' => true,
+  '/home/am/projects/phalcontest/vendor/timber/timber/src/Timber/Tests/Entities/EntityTest.php' => true,
+));
+$filter->setWhitelistedFiles(array (
+));
+
+return $coverage;
