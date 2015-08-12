@@ -6,8 +6,13 @@ use Timber\Utils\NSTools;
 use Sabre\Xml\XmlSerializable;
 use Sabre\Xml\Writer as XmlWriter;
 use \Traversable;
+use \ArrayObject;
 
-class EntityCollection implements EntityInterface
+/**
+ * @todo now that it extends ArrayObject we should move * content to use the inbuilt array, using traversal
+ * methods etc..
+ */
+class EntityCollection extends ArrayObject implements EntityInterface
 {
     public $content;
     public $ns         = 'urn:Timber:EntityCollection';
@@ -19,12 +24,15 @@ class EntityCollection implements EntityInterface
     public function __construct($content = null)
     {
         $className     = get_class($this);
+
         $this->content = $content;
         $this->entity  = substr($className, 0, -10);
         $this->name    = NSTools::extractClassname($className);
         $this->ns      = 'urn:'.NSTools::extractNS($className);
         $this->clarkNS = '{'.$this->ns.'}';
+
     }
+
 
     public function __toXML()
     {
@@ -34,9 +42,13 @@ class EntityCollection implements EntityInterface
 
         foreach ($this->content as $k => $v) {
             if ($v instanceof Entity){
+                $className = get_class($v);
+                $v->name = NSTools::extractClassname($className);
+                $v->ns = 'urn:'.NSTools::extractNS($className);
                 $writer->writeRaw($v->__toXML());
             } else if(is_array($v)) {
                 $tmpEntity = new $this->entity($v);
+
                 $writer->writeRaw($tmpEntity->__toXML());
             }
         }
