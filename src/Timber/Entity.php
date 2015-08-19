@@ -21,6 +21,7 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
     public function __construct($content = null)
     {
         $this->content = $content;
+
         $className  = get_class($this);
         $this->name = NSTools::extractClassname($className);
         $this->ns   = 'urn:'.NSTools::extractNS($className);
@@ -37,7 +38,56 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
     {
         return $this->name;
     }
+
+    public function offsetExists($offset)
+    {
+        if ($this->content != null)
+        {
+            if (is_array($this->content)) {
+                return isset($this->content[$offset]);
+            } elseif (is_object($this->content)) {
+                return isset($this->content->$offset);
+            } else {
+                throw new InvalidArgumentException('Internal storage is not array or object addressable');
+            }
+        }
+    }
+
+    public function offsetGet($offset)
+    {
+        if ($this->content != null)
+        {
+            if (is_array($this->content)) {
+                return $this->content[$offset];
+            } elseif (is_object($this->content)) {
+                return $this->content->$offset;
+            } else {
+                throw new InvalidArgumentException('Internal storage is not array or object addressable');
+            }
+        }
+    }
     
+    public function offsetSet($offset, $value)
+    {
+        if ($this->content != null)
+        {
+            if (is_array($this->content)) {
+                $this->content[$offset] = $value;
+            } elseif (is_object($this->content)) {
+                $this->content->$offset = $value;
+            } else {
+                throw new InvalidArgumentException('Internal storage is not array or object addressable');
+            }
+        }
+    }
+
+    public function offsetUnset($offset)
+    {
+        if (isset($this->content[$offset])) {
+            unset($this->content[$offset]);
+        }
+    }
+
     /**
      *
      *
@@ -109,37 +159,6 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
 
         }
         return false;
-    }
-
-    public function offsetExists($offset)
-    {
-        return $this->content != null && isset($this->content[$offset]);
-    }
-
-    public function offsetGet($offset)
-    {
-        if ($this->content != null)
-        {
-            return $this->content[$offset];
-        }
-        return false;
-    }
-
-    public function offsetSet($offset, $value)
-    {
-        if ($this->content != null)
-        {
-            $this->content[$offset] = $value;
-        }
-        return false;
-    }
-
-    public function offsetUnset($offset)
-    {
-        if ($this->content != null)
-        {
-            unset($this->content[$offset]);
-        }
     }
 
     /**
