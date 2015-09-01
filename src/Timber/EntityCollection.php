@@ -5,14 +5,16 @@ use Timber\EntityInterface;
 use Timber\Utils\NSTools;
 use Sabre\Xml\XmlSerializable;
 use Sabre\Xml\Writer as XmlWriter;
-use \Traversable;
-use \ArrayObject;
+use \IteratorAggregate;
+use \ArrayAccess;
+use \ArrayIterator;
+
 
 /**
  * @todo now that it extends ArrayObject we should move * content to use the inbuilt array, using traversal
  * methods etc..
  */
-class EntityCollection extends ArrayObject implements EntityInterface
+class EntityCollection extends ArrayIterator implements EntityInterface, \ArrayAccess
 {
     public $content;
     public $ns         = 'urn:Timber:EntityCollection';
@@ -25,20 +27,39 @@ class EntityCollection extends ArrayObject implements EntityInterface
     {
         $className     = get_class($this);
 
-        $this->content = $content;
+        // $this->content = $content;
         $this->entity  = substr($className, 0, -10);
         $this->name    = NSTools::extractClassname($className);
         $this->ns      = 'urn:'.NSTools::extractNS($className);
         $this->clarkNS = '{'.$this->ns.'}';
 
+        $this->content = $content;
     }
 
+    public function offsetSet($offset, $val)
+    {
+        $this->content[$offset] = $val;
+    }
+    
+    public function offsetGet($offset)
+    {
+        if ($this->offsetExists($offset)) {
+            return $this->content[$offset];
+        }
+        return null;
+    }
+    
+    public function offsetExists($offset)
+    {
+        return isset($this->content[$offset]);
+    }
 
     public function __toXML()
     {
+
         $writer = new \Sabre\Xml\Writer();
         $writer->openMemory();
-        $writer->startElementNS(null, $this->name, $this->ns);
+        $writer->startElementNS(null, $this->getName(), $this->ns);
 
         foreach ($this->content as $k => $v) {
             if ($v instanceof Entity){
@@ -48,13 +69,56 @@ class EntityCollection extends ArrayObject implements EntityInterface
                 $writer->writeRaw($v->__toXML());
             } else if(is_array($v)) {
                 $tmpEntity = new $this->entity($v);
-
                 $writer->writeRaw($tmpEntity->__toXML());
             }
         }
+
         $writer->endElement();
         return $writer->outputMemory();
     }
+
+//     public function offsetExists($offset)
+//     {
+//         if ($this->content != null)
+//         {
+//             if (is_array($this->content)) {
+//                 return isset($this->content[$offset]);
+//             } elseif (is_object($this->content)) {
+//                 return isset($this->content->$offset);
+//             } else {
+//                 throw new InvalidArgumentException('Internal storage is not array or object addressable');
+//             }
+//         }
+//     }
+//
+//     public function offsetGet($offset)
+//     {
+//         if ($this->content != null)
+//         {
+//             if (is_array($this->content)) {
+//                 return $this->content[$offset];
+//             } elseif (is_object($this->content)) {
+//                 return $this->content->$offset;
+//             } else {
+//                 throw new InvalidArgumentException('Internal storage is not array or object addressable');
+//             }
+//         }
+//     }
+//
+//     public function offsetSet($offset, $value)
+//     {
+//         if ($this->content != null)
+//         {
+//             if (is_array($this->content)) {
+//                 $this->content[$offset] = $value;
+//             } elseif (is_object($this->content)) {
+//                 $this->content->$offset = $value;
+//             } else {
+//                 throw new InvalidArgumentException('Internal storage is not array or object addressable');
+//             }
+//         }
+//     }
+//
 
     public function getNS()
     {
@@ -65,5 +129,4 @@ class EntityCollection extends ArrayObject implements EntityInterface
     {
         return $this->name;
     }
-
 }

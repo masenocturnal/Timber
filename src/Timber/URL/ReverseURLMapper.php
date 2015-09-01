@@ -25,10 +25,7 @@ class ReverseURLMapper
         if ($args == null) {
             $params = [];
         } else {
-
             mb_parse_str($args, $params);
-
-            error_log("HERE ");
 
             // for is reserved for the $id
             if (isset($params['for'])) {
@@ -38,10 +35,6 @@ class ReverseURLMapper
         if (!empty($id)) {
 
             $params['for'] = $id;
-            if($id == 'getProduct') {
-                error_log("ID ".$id);
-                error_log("STRING ".print_r($params, true));
-            }
 
             try {
                 $str = $url->get($params);

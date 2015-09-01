@@ -71,6 +71,7 @@ class XMLController extends Controller
         $this->setDefaultXSLParams(); 
 
         // instanciate the class so it's accessible to the XSTView
+        // todo move to Di ?
         $this->reverseURLMapper = new ReverseURLMapper($this->url);
     }
 

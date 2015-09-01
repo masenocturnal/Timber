@@ -1,11 +1,11 @@
 <?php
 namespace Timber;
 
-use \Phalcon\Exception;
-use \Phalcon\Config;
+use Phalcon\Exception;
+use Phalcon\Config;
+use Phalcon\MVC\Application;
 
-
-class Timber extends \Phalcon\MVC\Application
+class Timber extends Application
 {
     public $configDir     = null;
     
@@ -64,7 +64,7 @@ class Timber extends \Phalcon\MVC\Application
         } catch (\Exception $e) {
             
             $logger = $this->_dependencyInjector['log'];
-                $logger->error(sprintf('Error (%s): %s %s:%s', $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine()));
+            $logger->error(sprintf('Error (%s): %s %s:%s', $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine()));
             error_log("Exception".$e->getMessage());
         }
      }
