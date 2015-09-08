@@ -35,7 +35,7 @@ class Timber extends Application
      * Register an additional classmap if specified in the config
      *
      */
-    protected function registerClassmap()
+    public function registerClassmap()
     {
         $classMapFile = $this->_dependencyInjector['config']->classMap;
         
