@@ -5,16 +5,15 @@ use Timber\EntityInterface;
 use Timber\Utils\NSTools;
 use Sabre\Xml\XmlSerializable;
 use Sabre\Xml\Writer as XmlWriter;
-use \IteratorAggregate;
-use \ArrayAccess;
 use \ArrayIterator;
-
+use \ArrayAccess;
+use \IteratorAggregate;
 
 /**
  * @todo now that it extends ArrayObject we should move * content to use the inbuilt array, using traversal
  * methods etc..
  */
-class EntityCollection extends ArrayIterator implements EntityInterface, \ArrayAccess
+abstract class EntityCollection implements EntityInterface, ArrayAccess, IteratorAggregate
 {
     public $content;
     public $ns         = 'urn:Timber:EntityCollection';
@@ -36,9 +35,21 @@ class EntityCollection extends ArrayIterator implements EntityInterface, \ArrayA
         $this->content = $content;
     }
 
+    public function getIterator()
+    {
+        return new ArrayIterator($this->content);
+    }
+
     public function offsetSet($offset, $val)
     {
         $this->content[$offset] = $val;
+    }
+
+    public function offsetUnset($offset)
+    {
+        if ($this->offsetExists($offset)) {
+            unset($this->content[$offset]);
+        }
     }
     
     public function offsetGet($offset)
@@ -76,6 +87,7 @@ class EntityCollection extends ArrayIterator implements EntityInterface, \ArrayA
         $writer->endElement();
         return $writer->outputMemory();
     }
+
 
 //     public function offsetExists($offset)
 //     {
