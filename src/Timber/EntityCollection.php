@@ -8,6 +8,7 @@ use Sabre\Xml\Writer as XmlWriter;
 use \ArrayIterator;
 use \ArrayAccess;
 use \IteratorAggregate;
+use \InvalidArgumentException;
 
 /**
  * @todo now that it extends ArrayObject we should move * content to use the inbuilt array, using traversal
@@ -22,11 +23,16 @@ abstract class EntityCollection implements EntityInterface, ArrayAccess, Iterato
     public $clarkNS    = null;
     protected $_format = [];
 
-    public function __construct($content = null)
+    public function __construct($content = [])
     {
+        if ($content === null)
+        {
+            throw new InvalidArgumentException('You must pass a non null value');
+        }
+
         $className     = get_class($this);
 
-        // $this->content = $content;
+        $this->content = $content;
         $this->entity  = substr($className, 0, -10);
         $this->name    = NSTools::extractClassname($className);
         $this->ns      = 'urn:'.NSTools::extractNS($className);
@@ -131,6 +137,18 @@ abstract class EntityCollection implements EntityInterface, ArrayAccess, Iterato
 //         }
 //     }
 //
+
+    public function log($message)
+    {
+        if ($this->_log != null) {
+            $this->_log->debug($message);
+        }
+    }
+
+    public function setLogger($logger)
+    {
+        $this->_log = $logger;
+    }
 
     public function getNS()
     {
