@@ -14,6 +14,7 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
     public $name       = 'Entity';
     public $clarkNS    = null;
     protected $_format = [];
+    protected $_log    = null;
     
     use \Timber\Utils\Array2XMLTrait;
     use \Timber\Utils\Object2XMLTrait;
@@ -28,6 +29,21 @@ class Entity implements ArrayAccess, JsonSerializable, EntityInterface
         $this->clarkNS = '{'.$this->ns.'}';
     }
     
+    /**
+     * This is really only used for debugging purposes
+     *
+     */
+    public function log($message)
+    {
+        if ($this->_log != null) {
+            $this->_log->debug($message);
+        }
+    }
+
+    public function setLogger($logger)
+    {
+        $this->_log = $logger;
+    }
     
     public function getNS()
     {
