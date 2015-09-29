@@ -3,25 +3,28 @@ namespace Timber;
 use Timber\XML\DOMDocument;
 use Timber\EntityInterface;
 use Timber\Utils\NSTools;
+use Sabre\Xml\Writer as Writer;
 use Sabre\Xml\XmlSerializable;
-use Sabre\Xml\Writer as XmlWriter;
 use \ArrayIterator;
 use \ArrayAccess;
 use \IteratorAggregate;
 use \InvalidArgumentException;
 
+
 /**
  * @todo now that it extends ArrayObject we should move * content to use the inbuilt array, using traversal
  * methods etc..
  */
-abstract class EntityCollection implements EntityInterface, ArrayAccess, IteratorAggregate
+abstract class EntityCollection implements EntityInterface, ArrayAccess, IteratorAggregate, XmlSerializable
 {
     public $content;
     public $ns         = 'urn:Timber:EntityCollection';
     public $name       = 'EntityCollection';
     public $entity     = 'Timber\Entity';
     public $clarkNS    = null;
+
     protected $_format = [];
+    private  $_log     = null;
 
     public function __construct($content = [])
     {
@@ -77,6 +80,13 @@ abstract class EntityCollection implements EntityInterface, ArrayAccess, Iterato
         $writer = new \Sabre\Xml\Writer();
         $writer->openMemory();
         $writer->startElementNS(null, $this->getName(), $this->ns);
+        $this->xmlSerialize($writer);
+        $writer->endElement();
+        return $writer->outputMemory();
+    }
+
+    function xmlSerialize(Writer $writer)
+    {
 
         foreach ($this->content as $k => $v) {
             if ($v instanceof Entity){
@@ -89,11 +99,7 @@ abstract class EntityCollection implements EntityInterface, ArrayAccess, Iterato
                 $writer->writeRaw($tmpEntity->__toXML());
             }
         }
-
-        $writer->endElement();
-        return $writer->outputMemory();
     }
-
 
 //     public function offsetExists($offset)
 //     {
