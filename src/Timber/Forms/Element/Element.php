@@ -2,6 +2,7 @@
 namespace Timber\Forms\Element;
 
 use \DOMElement;
+use Phalcon\Validation\ValidatorInterface;
 
 abstract class Element extends \Phalcon\Forms\Element
 {
@@ -12,7 +13,7 @@ abstract class Element extends \Phalcon\Forms\Element
     public $constraintNames = [];
 
 
-    public function addValidator($validator)
+    public function addValidator(ValidatorInterface $validator)
     {
         $className = get_class($validator);
         $this->constraintNames[] = substr($className, 1+strrpos($className, '\\'));
@@ -20,30 +21,29 @@ abstract class Element extends \Phalcon\Forms\Element
         return $this;
     }
 
-
+    /**
+     *
+     */
     public function render($attributes=null)
     {
         return parent::render($attributes);
     }
-    
-    
 
     /**
      *
      */
     public function getElement($attributes = [])
     {
+        // @todo use xmlwriter
         $attr = [
             'name'  => sprintf('%s[%s]', $this->_form->formName, $this->_name),
             'id'    => sprintf('%s-%s', $this->_form->formName, $this->_name),
             'xmlns' => $this->ns,
             'value' => parent::getValue(),
-            'type'  => $this->type,
-            
+            'type'  => $this->type
         ];
 
         $el = '<input ';
-
         $attributes = array_merge($attr, $attributes);
 
         foreach ($attributes as $key => $val) {
@@ -54,7 +54,7 @@ abstract class Element extends \Phalcon\Forms\Element
         $el .= " />";
         return $el;
     }
-
+    // @todo use xmlwriter
     public function label()
     {
         $id = sprintf('%s-%s', $this->_form->formName, $this->_name);
