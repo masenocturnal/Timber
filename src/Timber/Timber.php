@@ -8,11 +8,11 @@ use Phalcon\MVC\Application;
 class Timber extends Application
 {
     public $configDir     = null;
-    
+
     /**
      *
-     * @param string $configDir        A valid directory to look at for 
-     *                                 config files 
+     * @param string $configDir        A valid directory to look at for
+     *                                 config files
      * @param Object $classLoader      Object responsible for loading classes
      * @param string $configPrefix     Prefix of the file to use to override config
      *                                 options
@@ -30,7 +30,7 @@ class Timber extends Application
         );
         parent::__construct($di);
     }
-    
+
     /**
      * Register an additional classmap if specified in the config
      *
@@ -38,12 +38,12 @@ class Timber extends Application
     public function registerClassmap()
     {
         $classMapFile = $this->_dependencyInjector['config']->classMap;
-        
+
         if (is_file($classMapFile)) {
             $this->loader->registerNamespaces(include($classMapFile), true);
         }
     }
-    
+
     /**
      *
      *
@@ -62,12 +62,13 @@ class Timber extends Application
             }
             echo $response;
         } catch (\Exception $e) {
-            
+
             $logger = $this->_dependencyInjector['log'];
-            $logger->error(sprintf('Error (%s): %s %s:%s', $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine()));
+            $logger->error(sprintf('Error: %s (%s): %s %s:%s', get_class($e), $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine()));
+            $logger->error($e->getTraceAsString());
             error_log("Exception".$e->getMessage());
         }
      }
-     
-     
+
+
 }

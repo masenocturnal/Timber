@@ -1,7 +1,11 @@
 <?php
 namespace Timber\Forms;
 
-abstract class Form extends \Phalcon\Forms\Form
+use Phalcon\Forms\ElementInterface;
+use Timber\EntityInterface;
+use Timber\Utils\NSTools;
+
+abstract class Form extends \Phalcon\Forms\Form implements EntityInterface
 {
     public $formName = null;
     public $formNs   = 'urn:Timber:Form';
@@ -13,12 +17,16 @@ abstract class Form extends \Phalcon\Forms\Form
      * @override Automatically add set the form
      * when adding the element to the form
      */
-    public function add($element, $pos = NULL, $type = NULL)
+    public function add(ElementInterface $element, $position = null, $type = null)
     {
         $element->setForm($this);
-        parent::add($element, $pos, $type);
-    }
 
+        $className  = get_class($this);
+        $this->name = NSTools::extractClassname($className);
+        $this->ns   = 'urn:'.NSTools::extractNS($className);
+
+        parent::add($element, $position, $type);
+    }
 
     /**
      * @override isValid
@@ -34,11 +42,11 @@ abstract class Form extends \Phalcon\Forms\Form
             }
         }
         $this->valid = parent::isValid($this->_data, $entity);
-        
+
         return $this->valid;
     }
 
-    
+
     /**
      * Render as XML
      *
@@ -86,5 +94,20 @@ abstract class Form extends \Phalcon\Forms\Form
         $dom->documentElement->setAttribute('id', $this->formName);
 
         return $dom->saveXML($dom->documentElement);
+    }
+
+    public function setLogger($logger)
+    {
+        $this->_log = $logger;
+    }
+
+    public function getNS()
+    {
+        return $this->ns;
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 }

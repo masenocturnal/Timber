@@ -30,67 +30,75 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
             // @todo do we import nodes ?
             if (method_exists($val,'__toXML')) {
                 $dom->appendXML($dom->documentElement, $val->__toXML());
-            } 
+            }
         }
 
         if ($dom == null) {
             throw new Exception('DOM is empty in: '.__CLASS__);
         }
-        
+
         // make sure the template exists
         if (!file_exists($path)) {
-            
             throw new Exception('Template path '.$path.' does not exist');
         }  else {
 
             $xsltProcessor = null;
-            if (extension_loaded('xslcache')) {
-                
-                $cache = false;
-                if (isset($this->getDI()['config']->xslt) && 
-                    isset($this->getDI()['config']->xslt->cache)) {
-                    $cache = $this->getDI()['config']->xslt->cache;
+            $import        = false;  // used to keep track of  xslt errors
+            if (false  && extension_loaded('xslcache')) {
+
+                $cache  = false;
+                $config = $this->getDI()['config'];
+
+                if (isset($config->xslt) &&
+                    isset($config->xslt->cache)) {
+                    $cache = $config->xslt->cache;
                 }
-                
+
                 $xsltProcessor = new XSLTCache();
                 $xsltProcessor->registerPHPFunctions();
-                $xsltProcessor->importStylesheet($path, $cache);
-                
+
+                libxml_use_internal_errors(true);
+                $import = $xsltProcessor->importStylesheet($path, $cache);
+
             } else {
-            
+
                 $xslDOM = new \DOMDocument();
                 $xslDOM->load($path, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
-                
+
                 $xsltProcessor = new \XSLTProcessor();
                 $xsltProcessor->registerPHPFunctions();
-                $xsltProcessor->importStylesheet($xslDOM);
+
+                $import = $xsltProcessor->importStylesheet($xslDOM);
             }
 
-            foreach ($xslParams as $key => $val) {
-                $xsltProcessor->setParameter('', $key, $val);
-            }
+            if ($xsltProcessor != null) {
+                foreach ($xslParams as $key => $val) {
+                    $xsltProcessor->setParameter('', $key, $val);
+                }
 
-            // look for the extension
-            $format = $this->dispatcher->getParam('format');
+                // look for the extension
+                $format = $this->dispatcher->getParam('format');
 
-            $content = null;
-            // probably want a different handler for xml
-            if (null != $format && $format == '.xml') {
-                $this->response->setHeader('Content-Type', 'application/xml; charset=utf-8');
-                $dom->formatOutput=true;
-                $dom->preserveWhitespace=true;
-                $content = $dom->saveXML();
+                $content = null;
+                // probably want a different handler for xml
+                if (null != $format && $format == '.xml') {
+                    $this->response->setHeader('Content-Type', 'application/xml; charset=utf-8');
+                    $dom->formatOutput=true;
+                    $dom->preserveWhitespace=true;
+                    $content = $dom->saveXML();
 
-            } else {
-                // render as html
-                ob_start();
-                $xsltProcessor->transformToURI($dom, 'php://output');
-                $content = ob_get_clean();
+                } else {
+                    // render as html
+                    ob_start();
+
+                    $xsltProcessor->transformToURI($dom, 'php://output');
+                    $x = libxml_get_last_error();
+                    $content = ob_get_clean();
+                }
             }
 
             $this->getView()->setContent($content);
             return true;
         }
-
     }
 }
