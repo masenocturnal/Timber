@@ -27,6 +27,18 @@ class DOMElement extends \DOMElement
         return $el;
     }
 
+    public function createElementNS($ns, $name, $value = null, $append = false)
+    {
+        $el = $this->ownerDocument->createElementNS($ns, $name,$value);
+
+        // automatically append to the current node
+        if ($append == true) {
+            return $this->appendChild($el);
+        }
+
+        return $el;
+    }
+
     /**
      * Set element attributes all in one key value pair array
      *
@@ -51,7 +63,7 @@ class DOMElement extends \DOMElement
     {
         return $this->ownerDocument->getNode($query, $this, $params);
     }
-    
+
     public function appendXML($str)
     {
         return $this->ownerDocument->appendXML($this, $str, false);
