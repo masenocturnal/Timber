@@ -36,7 +36,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
         if ($dom == null) {
             throw new Exception('DOM is empty in: '.__CLASS__);
         }
-
+        libxml_use_internal_errors(true);
         // make sure the template exists
         if (!file_exists($path)) {
             throw new Exception('Template path '.$path.' does not exist');
@@ -57,7 +57,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
                 $xsltProcessor = new XSLTCache();
                 $xsltProcessor->registerPHPFunctions();
 
-                libxml_use_internal_errors(true);
+
                 $import = $xsltProcessor->importStylesheet($path, $cache);
 
             } else {
@@ -90,9 +90,13 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
                 } else {
                     // render as html
                     ob_start();
-
                     $xsltProcessor->transformToURI($dom, 'php://output');
-                    $x = libxml_get_last_error();
+
+                    $x = libxml_get_errors();
+                    foreach ($x as $err) {
+                        $this->log->error($err->message);
+                    }
+
                     $content = ob_get_clean();
                 }
             }
