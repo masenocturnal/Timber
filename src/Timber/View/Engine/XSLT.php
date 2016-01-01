@@ -44,7 +44,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 
             $xsltProcessor = null;
             $import        = false;  // used to keep track of  xslt errors
-            if (false  && extension_loaded('xslcache')) {
+            if (extension_loaded('xslcache')) {
 
                 $cache  = false;
                 $config = $this->getDI()['config'];
