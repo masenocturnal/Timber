@@ -21,15 +21,21 @@ class XMLController extends Controller
 {
     /** Reference to the DOM Document **/
     protected $dom              = null;
-    
+
     /** Params passed to xslt processor **/
     protected $xslParams        = null;
-    
+
     /** Reference to the reverseURLMapper **/
     protected $reverseURLMapper = null;
 
     protected $defaultModule    = 'Modules\Site';
-    
+
+    protected $xmlFile          = null;
+
+    protected $xslFile          = null;
+
+    protected $moduleDir        = null;
+
     /**
      * Automatically sets the views dir to the module
      * views directory
@@ -40,35 +46,33 @@ class XMLController extends Controller
     {
         $className = $dispatcher->getControllerName();
         $ns        = substr($className, 0, strripos($className, '\\', -1)+1);
-        $ns        = str_replace(
-            [
-                'Controllers', // rename Controllers to Views
-                '\\' // replace the \ in the namespace with the / from the fs
-            ],
-            [
-                'Views',
-                DIRECTORY_SEPARATOR
-            ],
-            $ns
-        );
+        $appDir    = $this->config->appDir;
 
-        $viewsDir = $this->config->appDir.DIRECTORY_SEPARATOR.$ns;
+        $this->xslFile = $dispatcher->getActionName();
+
+        // turn Modules/Foo/Controllers/ into Modules/Foo/
+        $this->moduleDir = str_replace(
+            '\\',
+            DIRECTORY_SEPARATOR,
+            substr($ns, 0, strrpos($ns, 'Controllers', 0)
+        ));
+
+        $viewsDir = $appDir.DIRECTORY_SEPARATOR.$this->moduleDir.'Views'.DIRECTORY_SEPARATOR;
         $this->log->debug('Setting Views Dir to '.$viewsDir);
         $this->view->setViewsDir($viewsDir);
 
-        $appDir = $this->config->appDir;
-        $ds     = DIRECTORY_SEPARATOR;
-
         $loadOrder = [
-            $appDir.$ds.str_replace('Views', 'XML', $ns).$dispatcher->getActionName().'.xml',
-            $appDir.$ds.str_replace('\\', '/', $this->defaultModule).$ds.'XML'.$ds.'index.xml'
+            $this->xmlFile,
+            $appDir.DIRECTORY_SEPARATOR.$this->moduleDir.'XML'.DIRECTORY_SEPARATOR.$dispatcher->getActionName().'.xml',
+            $appDir.DIRECTORY_SEPARATOR.
+                str_replace('\\', '/', $this->defaultModule).
+                DIRECTORY_SEPARATOR.'XML'.DIRECTORY_SEPARATOR.'index.xml'
         ];
-
 
         $this->loadXML($loadOrder);
 
         // we need to populate a few params so that the view xslt can use them
-        $this->setDefaultXSLParams(); 
+        $this->setDefaultXSLParams();
 
         // instanciate the class so it's accessible to the XSTView
         // todo move to Di ?
@@ -84,8 +88,8 @@ class XMLController extends Controller
 
         foreach ($loadOrder as $file)
         {
-            $this->log->debug(sprintf('Attempting to load %s', $file));
-            if (is_file($file)) {
+            if ($file != null && is_file($file)) {
+                $this->log->debug(sprintf('Attempting to load %s', $file));
                 $xmlFile = $file;
                 break;
             }
@@ -149,6 +153,6 @@ class XMLController extends Controller
     {
         $this->view->setVar('dom', $this->dom);
         $this->view->setVar('xslParams', $this->xslParams);
-        $this->view->pick($dispatcher->getActionName());
+        $this->view->pick($this->xslFile);
     }
 }
