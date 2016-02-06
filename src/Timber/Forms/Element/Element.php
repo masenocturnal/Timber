@@ -44,7 +44,7 @@ abstract class Element extends \Phalcon\Forms\Element
         ];
 
         $el = '<input ';
-        $attributes = array_merge($attr, $attributes);
+        $attributes = array_merge($attr, $this->getAttributes(), $attributes);
 
         foreach ($attributes as $key => $val) {
             if (!empty($val)) {
