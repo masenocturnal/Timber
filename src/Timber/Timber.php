@@ -66,9 +66,7 @@ class Timber extends Application
             $logger = $this->_dependencyInjector['log'];
             $logger->error(sprintf('Error: %s (%s): %s %s:%s', get_class($e), $e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine()));
             $logger->error($e->getTraceAsString());
-            error_log("Exception".$e->getMessage());
+            error_log("Exception: ".$e->getMessage());
         }
      }
-
-
 }
