@@ -8,6 +8,7 @@ use Phalcon\DI\InjectionAwareInterface;
 use Phalcon\Mvc\ViewInterface;
 use Phalcon\DiInterface;
 use Phalcon\Exception;
+use Timber\Exceptions\UnexpectedArgumentException;
 use \XSLTCache;
 
 class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
@@ -36,14 +37,17 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
         if ($dom == null) {
             throw new Exception('DOM is empty in: '.__CLASS__);
         }
+
         libxml_use_internal_errors(true);
+        $import  = false;  // used to keep track of  xslt errors
+
         // make sure the template exists
         if (!file_exists($path)) {
             throw new Exception('Template path '.$path.' does not exist');
         }  else {
 
             $xsltProcessor = null;
-            $import        = false;  // used to keep track of  xslt errors
+
             if (extension_loaded('xslcache')) {
 
                 $cache  = false;
@@ -71,7 +75,11 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
                 $import = $xsltProcessor->importStylesheet($xslDOM);
             }
 
-            if ($xsltProcessor != null) {
+            if (!$import) {
+                throw new UnexpectedArgumentException(sprintf('Unable to import %s', $path));
+            }
+
+            if ($xsltProcessor != null ) {
                 foreach ($xslParams as $key => $val) {
                     $xsltProcessor->setParameter('', $key, $val);
                 }
