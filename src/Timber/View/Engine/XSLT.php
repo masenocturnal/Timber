@@ -13,31 +13,32 @@ use \XSLTCache;
 
 class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 {
-
-
     public function render($path, $params, $mustClean = null)
     {
+        $this->log->debug('Begin Rendering');
+
+        if (!isset($params['dom']) && !empty($params['dom'])) {
+            throw new Exception('[XSLT] DOM is empty in: ');
+        }
+
+        
         $dom = $params['dom'];
         unset($params['dom']);
-
+       
         $xslParams = null;
         // look for any special params
         if (isset($params['xslParams'])) {
             $xslParams = $params['xslParams'];
             unset($params['xslParams']);
         }
-
+        
         foreach ($params as $key => $val) {
             // @todo do we import nodes ?
-            if (method_exists($val,'__toXML')) {
+            if (method_exists($val, '__toXML')) {
                 $dom->appendXML($dom->documentElement, $val->__toXML());
             }
         }
-
-        if ($dom == null) {
-            throw new Exception('DOM is empty in: '.__CLASS__);
-        }
-
+        
         libxml_use_internal_errors(true);
         $import  = false;  // used to keep track of  xslt errors
 
@@ -75,9 +76,6 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
                 $import = $xsltProcessor->importStylesheet($xslDOM);
             }
 
-            if (!$import) {
-                throw new UnexpectedArgumentException(sprintf('Unable to import %s', $path));
-            }
 
             if ($xsltProcessor != null ) {
                 foreach ($xslParams as $key => $val) {
@@ -99,15 +97,22 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
                     // render as html
                     ob_start();
                     $xsltProcessor->transformToURI($dom, 'php://output');
-
-                    $x = libxml_get_errors();
-                    foreach ($x as $err) {
-                        $this->log->error($err->message);
-                    }
-
                     $content = ob_get_clean();
                 }
             }
+            
+            if (!$import) {
+                $x = libxml_get_errors();
+               
+                 foreach ($x as $err) {
+                    $this->log->error($err->message);
+                    
+                 }
+
+
+                throw new UnexpectedArgumentException(sprintf('Unable to import %s', $path));
+            }
+
 
             $this->getView()->setContent($content);
             return true;
