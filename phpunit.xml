@@ -1,0 +1,23 @@
+<phpunit
+    bootstrap="phpunit-bootstrap.php"
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    verbose="true"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    syntaxCheck="true">
+    <testsuites>
+      <testsuite name="Timber - Entity">
+        <file>src/Timber/Tests/Entities/EntityTest.php</file>
+      </testsuite>
+      <!--
+      <testsuite name="Phalcon - Forms">
+        <file>src/Timber/Tests/Entities/FormTest.php</file>
+      </testsuite>
+      -->
+    </testsuites>
+</phpunit>
