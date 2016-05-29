@@ -14,14 +14,15 @@ class Hidden extends \Timber\Forms\Element\Element
     {
         // @todo use xmlwriter
         $attr = [
-            'name'  => sprintf('%s[%s]', $this->_form->formName, $this->_name),
-            'id'    => sprintf('%s-%s', $this->_form->formName, $this->_name),
             'xmlns' => $this->ns,
             'value' => parent::getValue(),
             'type'  => $this->type
         ];
-
+        
         $attributes = array_merge($attr, $this->getAttributes(), $attributes);
+
+        $attributes['name'] = sprintf('%s[%s]', $this->_form->formName, $this->_name); 
+        $attributes['id']   = sprintf('%s-%s', $this->_form->formName, $this->_name);
 
         $el = '<input ';
      
