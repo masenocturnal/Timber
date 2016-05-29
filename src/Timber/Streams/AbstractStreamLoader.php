@@ -37,7 +37,7 @@ abstract class AbstractStreamLoader
         if (isset($map['default'])) {
             static::$map = $map;
         } else {
-            throw new \Exception('No default Key specified');
+            throw new \Exception('No [default] key specified in path map for '.get_class($this));
         }
     }
 
@@ -67,6 +67,7 @@ abstract class AbstractStreamLoader
      */
      public function register($scheme, array $map, Logger $logger )
      {
+        
         if (!in_array($scheme,stream_get_wrappers()) ) {
             self::$logger = $logger;
             $this->setPathMap($map);
