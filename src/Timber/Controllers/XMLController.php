@@ -79,7 +79,7 @@ class XMLController extends Controller
         $this->reverseURLMapper = new ReverseURLMapper($this->url);
     }
 
-    private function loadXML($loadOrder)
+    protected function loadXML($loadOrder)
     {
         $this->dom = new DOMDocument();
         $this->registerDefaultStreamWrapper();
@@ -140,7 +140,7 @@ class XMLController extends Controller
             'default' => getcwd()
         ];
         $streamLoader = new XMLStreamLoader();
-        $streamLoader->register('xml', $map, $this->log );
+        $streamLoader->register('xml', $map, $this->log);
     }
 
 
@@ -151,8 +151,15 @@ class XMLController extends Controller
      */
     public function afterExecuteRoute($dispatcher)
     {
+        
+        $this->log->debug('[XMLController] Current working dir '.getcwd());
+        $this->log->debug('[XMLController] Views Dir: '.$this->view->getViewsDir());
+        
         $this->view->setVar('dom', $this->dom);
+        // $this->log->debug('[XMLController] Document: '.$this->dom->saveXML());
+        
         $this->view->setVar('xslParams', $this->xslParams);
         $this->view->pick($this->xslFile);
+        
     }
 }
