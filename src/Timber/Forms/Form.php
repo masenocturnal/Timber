@@ -12,6 +12,11 @@ abstract class Form extends \Phalcon\Forms\Form implements EntityInterface
     public $method   = 'post';
     public $valid    = null;
     public $data     = null;
+    public $status   = null;
+
+    const STATUS_SUCCESS = 'success';
+    const STATUS_FAIL    = 'fail';
+    
 
     /**
      * @override Automatically add set the form
@@ -46,6 +51,16 @@ abstract class Form extends \Phalcon\Forms\Form implements EntityInterface
         return $this->valid;
     }
 
+    /**
+     * 
+     */
+    public function setStatus($status)
+    {
+        if ($status == self::STATUS_SUCCESS ||
+            $status == self::STATUS_FAIL) {
+            $this->status = $status;
+        }
+    }
 
     /**
      * Render as XML
@@ -60,6 +75,8 @@ abstract class Form extends \Phalcon\Forms\Form implements EntityInterface
         $formEl->setAttribute('id',     $this->formName);
         $formEl->setAttribute('method', $this->method);
         $formEl->setAttribute('valid',  $this->valid);
+        $formEl->setAttribute('status', $this->status);
+
         $str = null;
 
         if (false === $this->valid) {
