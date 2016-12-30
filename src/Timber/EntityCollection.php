@@ -87,7 +87,6 @@ abstract class EntityCollection implements EntityInterface, ArrayAccess, Iterato
 
     function xmlSerialize(Writer $writer)
     {
-
         foreach ($this->content as $k => $v) {
             if ($v instanceof Entity){
                 $className = get_class($v);
@@ -101,48 +100,6 @@ abstract class EntityCollection implements EntityInterface, ArrayAccess, Iterato
         }
     }
 
-//     public function offsetExists($offset)
-//     {
-//         if ($this->content != null)
-//         {
-//             if (is_array($this->content)) {
-//                 return isset($this->content[$offset]);
-//             } elseif (is_object($this->content)) {
-//                 return isset($this->content->$offset);
-//             } else {
-//                 throw new InvalidArgumentException('Internal storage is not array or object addressable');
-//             }
-//         }
-//     }
-//
-//     public function offsetGet($offset)
-//     {
-//         if ($this->content != null)
-//         {
-//             if (is_array($this->content)) {
-//                 return $this->content[$offset];
-//             } elseif (is_object($this->content)) {
-//                 return $this->content->$offset;
-//             } else {
-//                 throw new InvalidArgumentException('Internal storage is not array or object addressable');
-//             }
-//         }
-//     }
-//
-//     public function offsetSet($offset, $value)
-//     {
-//         if ($this->content != null)
-//         {
-//             if (is_array($this->content)) {
-//                 $this->content[$offset] = $value;
-//             } elseif (is_object($this->content)) {
-//                 $this->content->$offset = $value;
-//             } else {
-//                 throw new InvalidArgumentException('Internal storage is not array or object addressable');
-//             }
-//         }
-//     }
-//
 
     public function log($message)
     {
