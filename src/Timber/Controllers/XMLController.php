@@ -86,8 +86,7 @@ class XMLController extends Controller
 
         $xmlFile = null;
 
-        foreach ($loadOrder as $file)
-        {
+        foreach ($loadOrder as $file) {
             if ($file != null && is_file($file)) {
                 $this->log->debug(sprintf('Attempting to load %s', $file));
                 $xmlFile = $file;
@@ -159,7 +158,6 @@ class XMLController extends Controller
         // $this->log->debug('[XMLController] Document: '.$this->dom->saveXML());
         
         $this->view->setVar('xslParams', $this->xslParams);
-        $this->view->pick($this->xslFile);
-        
+            $this->view->pick($this->xslFile);
     }
 }
