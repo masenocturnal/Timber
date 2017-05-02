@@ -94,8 +94,10 @@ abstract class EntityCollection implements EntityInterface, ArrayAccess, Iterato
                 $v->ns = 'urn:'.NSTools::extractNS($className);
                 $writer->writeRaw($v->__toXML());
             } else if(is_array($v)) {
+                $writer->startElementNS(null, $this->name, $this->ns);
                 $tmpEntity = new $this->entity($v);
                 $writer->writeRaw($tmpEntity->__toXML());
+                $writer->endElement();
             }
         }
     }
