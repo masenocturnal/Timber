@@ -4,8 +4,9 @@ namespace Timber\Tests\Entities;
 use Timber\Entity;
 use Timber\EntityCollection;
 use DOMXpath;
+use PHPUnit\Framework\TestCase;
 
-class EntityTest extends \PHPUnit_Framework_TestCase
+class EntityTest extends TestCase
 {
     public $_entityNS = 'urn:Timber:Tests';
 
