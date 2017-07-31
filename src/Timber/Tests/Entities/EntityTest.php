@@ -150,6 +150,30 @@ class EntityTest extends TestCase
         $this->assertNotNull($xml);
     }
 
+    public function testEntityCollectionWithArray()
+    {
+        $arr1 = [
+            'aaa' => 'aabbb',
+            'bbb' => 'acccc',
+            'id' => '4'
+        ];
+
+        $barEntity = new BarEntity($arr1);
+
+        $arr2 = [
+            'eee' => 'fff',
+            'ggg' => 'hhh',
+            'iii' => 'jjj'
+        ];
+        $anotherCollection = new BarCollection($arr2);
+
+        $barEntity['id'] = $anotherCollection;
+
+        $xml = $barEntity->__toXML();
+        $this->assertNotNull($xml);
+        echo $xml;  
+    }
+
     public function testGetNS()
     {
         $entity = new BarEntity("foo");
@@ -180,6 +204,8 @@ class EntityTest extends TestCase
     public function testSet()
     {
         $entity = new BarEntity(['feh']);
+
+        $this->assertNotNull($entity);
         $entity->rar = "blah";
 
         $this->assertEquals("blah", $entity->rar);
@@ -214,12 +240,14 @@ class EntityTest extends TestCase
 
     /**
      *
-     * @expectedException \ErrorException
+     * @expectedException ErrorException
      */
     public function testSetException()
     {
         $entity = new BarEntity('blah');
         $entity->rar = "foo";
+        $this->expectException(ErrorException::class);
+
     }
 
     protected function checkNS($xml, array $xpaths)

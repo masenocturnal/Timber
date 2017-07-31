@@ -58,7 +58,7 @@ class XMLController extends Controller
         ));
 
         $viewsDir = $appDir.DIRECTORY_SEPARATOR.$this->moduleDir.'Views'.DIRECTORY_SEPARATOR;
-        $this->log->debug('Setting Views Dir to '.$viewsDir);
+        $this->log->debug('[XMLController] Setting Views Dir to '.$viewsDir);
         $this->view->setViewsDir($viewsDir);
 
         $loadOrder = [
@@ -88,7 +88,7 @@ class XMLController extends Controller
 
         foreach ($loadOrder as $file) {
             if ($file != null && is_file($file)) {
-                $this->log->debug(sprintf('Attempting to load %s', $file));
+                $this->log->debug(sprintf('[XMLController] Attempting to load %s', $file));
                 $xmlFile = $file;
                 break;
             }
@@ -98,7 +98,7 @@ class XMLController extends Controller
             throw new FileNotFoundException('XML File does not exist');
         }
 
-        $this->log->debug('XML File: '.$xmlFile);
+        $this->log->debug('[XMLController] Using XML File: '.$xmlFile);
 
         // file exist so include
         $this->dom->load($xmlFile, LIBXML_XINCLUDE|LIBXML_COMPACT|LIBXML_NONET);
@@ -158,6 +158,6 @@ class XMLController extends Controller
         // $this->log->debug('[XMLController] Document: '.$this->dom->saveXML());
         
         $this->view->setVar('xslParams', $this->xslParams);
-            $this->view->pick($this->xslFile);
+        $this->view->pick($this->xslFile);
     }
 }

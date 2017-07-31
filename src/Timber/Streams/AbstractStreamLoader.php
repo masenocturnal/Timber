@@ -23,6 +23,7 @@ abstract class AbstractStreamLoader
     public $pos;
     public $fp;
     public $path;
+    
     protected static $logger;
 
 
@@ -67,13 +68,15 @@ abstract class AbstractStreamLoader
      */
      public function register($scheme, array $map, Logger $logger )
      {
-        
-        if (!in_array($scheme,stream_get_wrappers()) ) {
+        $className = get_class($this);
+        static::$logName = substr($className, strlen(__NAMESPACE__)+1);
+
+        if (!in_array($scheme, stream_get_wrappers()) ) {
             self::$logger = $logger;
             $this->setPathMap($map);
 
             // this allows us to load XML via xml://lib/ style urls
-            stream_wrapper_register($scheme, get_class($this));
+            stream_wrapper_register($scheme, $className);
         }
      }
 
@@ -83,18 +86,19 @@ abstract class AbstractStreamLoader
      */
     public function stream_open($path, $mode, $options, &$opened_path)
     {
-        $myClassName = get_class($this);
-        $myClassName = substr($myClassName,strrpos($myClassName,'\\')+1);
-
         $this->pos  = 0;
         $urlParts = \parse_url( $path );
+        
+        self::$logger->debug('['.static::$logName.'] Looking for '.$path);
 
         if (3 == sizeof($urlParts)) {
             $this->path = $this->getPath($urlParts['host'], $urlParts['path']);
             
             if ($this->path != null && \stream_resolve_include_path($this->path) !== false) {
                 $this->fp = fopen($this->path, 'r');
-                self::$logger->debug('Including '.$this->path);
+                
+                
+                self::$logger->debug('['.static::$logName.'] Including '.$this->path);
 
                 return true;
             } else {
@@ -129,7 +133,7 @@ abstract class AbstractStreamLoader
                 $ret = $x($path);
             }
         }
-        self::$logger->debug("Stream  resolved $path to $ret ");
+        self::$logger->debug('['.static::$logName."] Stream  resolved $path to $ret ");
 
         return $ret;
     }

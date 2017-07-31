@@ -20,11 +20,9 @@ abstract class Model extends \Phalcon\Mvc\Model
             $parameters['limit']     = 1;
             $parameters['hydration'] = Resultset::HYDRATE_ARRAYS;
         }
-        
         $entity = self::find($parameters);
-
         $entity = $entity->getFirst();
-        
+
         return $entity;
     }
 

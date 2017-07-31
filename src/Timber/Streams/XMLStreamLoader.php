@@ -21,4 +21,5 @@ namespace Timber\Streams;
 final class XMLStreamLoader extends AbstractStreamLoader
 {
     protected static $map;
+    protected static $logName;
 }

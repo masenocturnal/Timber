@@ -15,7 +15,7 @@ class XSLT extends Engine implements EngineInterface, InjectionAwareInterface
 {
     public function render($path, $params, $mustClean = null)
     {
-        $this->log->debug('Begin Rendering');
+        $this->log->debug('[XSLT] Begin Rendering');
 
         if (!isset($params['dom']) && !empty($params['dom'])) {
             throw new Exception('[XSLT] DOM is empty in: ');
